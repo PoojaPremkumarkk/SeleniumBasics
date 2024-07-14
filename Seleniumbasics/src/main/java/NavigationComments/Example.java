@@ -38,7 +38,7 @@ WebElement loginemail=driver.findElement(By.id("Email"));
 loginemail.sendKeys("pooja@gmail.com");
 WebElement loginpassword=driver.findElement(By.id("Password"));
 loginpassword.sendKeys("pooja123");
-WebElement login=driver.findElement(By.className("button-1 login-button"));
+WebElement login=driver.findElement(By.className("login-button"));
 login.click();
 }
 	public static void main(String[] args) {
