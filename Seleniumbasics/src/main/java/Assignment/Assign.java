@@ -1,10 +1,12 @@
 package Assignment;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 public class Assign {
 	public void simpleformdemo()
@@ -77,6 +79,30 @@ public class Assign {
 		selectall.click();
 		
 	}
+	public void verifyRightclick()
+	{
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://demo.guru99.com/test/simple_context_menu.html");
+		WebElement rightclick=driver.findElement(By.xpath("//span[text()='right click me']"));
+		Actions act=new Actions(driver);
+		act.contextClick(rightclick).build().perform();
+		
+		
+	}
+	public void verifyDoubleClick()
+	{
+
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://demo.guru99.com/test/simple_context_menu.html");
+		WebElement doubleclick=driver.findElement(By.xpath("//button[text()='Double-Click Me To See Alert']"));
+		Actions act=new Actions(driver);
+		act.doubleClick(doubleclick).build().perform();
+		Alert alert=driver.switchTo().alert();
+		alert.accept();
+				
+	}
 	
 
 	public static void main(String[] args) {
@@ -84,8 +110,9 @@ public class Assign {
 		//a.simpleformdemo();
 		//a.checkboxdemo();
 		//a.radioButtondemo();
-		a.selectinput();
-		
+		//a.selectinput();
+		//a.verifyRightclick();
+		a.verifyDoubleClick();
 
 	}
 
