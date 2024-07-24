@@ -9,6 +9,34 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 public class Assign {
+	
+	
+	public void verifyDragAndDrop()
+	{
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://selenium.qabible.in/drag-drop.php");
+		WebElement drag=driver.findElement(By.xpath("//span[text()='Draggable n°1']"));
+		WebElement drop=driver.findElement(By.xpath("//div[@id='mydropzone']"));
+		Actions action=new Actions(driver);
+		action.moveToElement(drag).build().perform();
+		action.click(drag).build().perform();
+		action.contextClick(drag).build().perform();
+		action.dragAndDrop(drag, drop).build().perform();
+		}
+	public void frames()
+	{
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://demo.guru99.com/test/guru99home/");
+		
+		WebElement iframe=driver.findElement(By.xpath("//iframe[@id='a077aa5e']"));
+		driver.switchTo().frame(iframe);
+		WebElement img=driver.findElement(By.xpath("//img[@src='Jmeter720.png']"));
+		img.click();
+	}
+	
+	
 	public void simpleformdemo()
 	{
 		WebDriver driver=new ChromeDriver();
@@ -104,15 +132,30 @@ public class Assign {
 				
 	}
 	
+	public void verifyMouseHover()
+	{
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://demoqa.com/menu/");
+		WebElement menuitem2=driver.findElement(By.xpath("//a[text()='Main Item 2']"));
+		WebElement sublistmenu=driver.findElement(By.xpath("//a[text()='SUB SUB LIST »']"));
+		Actions action=new Actions(driver);
+		action.moveToElement(menuitem2).moveToElement(sublistmenu).build().perform();
+		driver.close();
+		}
+	
 
 	public static void main(String[] args) {
 		Assign a=new Assign();
+		a.frames();
 		//a.simpleformdemo();
 		//a.checkboxdemo();
 		//a.radioButtondemo();
 		//a.selectinput();
 		//a.verifyRightclick();
-		a.verifyDoubleClick();
+		//a.verifyDoubleClick();
+		//a.verifyMouseHover();
+		//a.verifyDragAndDrop();
 
 	}
 
