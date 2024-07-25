@@ -1,5 +1,6 @@
 package Assignment;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -9,7 +10,27 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 public class Assign {
-	
+	public void multipleWindowHandling()
+	{
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://webdriveruniversity.com/");
+		WebElement contact1=driver.findElement(By.xpath("//h1[text()='CONTACT US']"));
+		contact1.click();
+		WebElement login1=driver.findElement(By.xpath("//h1[text()='LOGIN PORTAL']"));
+		login1.click();
+		String parent=driver.getWindowHandle();
+		System.out.println("parent " +parent);
+		Set<String> allwindows=driver.getWindowHandles();
+		for(String temp:allwindows)
+		{
+			System.out.print("windows" +temp);
+			driver.switchTo().window(temp);
+			System.out.println(driver.getTitle());
+			System.out.println(driver.getCurrentUrl());
+			System.out.println("********************************");
+		}
+	}
 	
 	public void verifyDragAndDrop()
 	{
@@ -147,7 +168,8 @@ public class Assign {
 
 	public static void main(String[] args) {
 		Assign a=new Assign();
-		a.frames();
+		a.multipleWindowHandling();
+		//a.frames();
 		//a.simpleformdemo();
 		//a.checkboxdemo();
 		//a.radioButtondemo();
