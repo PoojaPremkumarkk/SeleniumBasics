@@ -55,7 +55,7 @@ public class Assign {
 				System.out.println("Prev Close value is"+columns.get(1).getText());
 			}
 			
-		;
+		
 	}
 	driver.close();
 }
