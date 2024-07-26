@@ -9,9 +9,8 @@ import java.util.List;
 
 public class WebTableExample {
     public void verifyDynamicWebTable() {
-        // Set the path to the ChromeDriver executable
-        
-
+       
+   
         // Initialize ChromeDriver
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
