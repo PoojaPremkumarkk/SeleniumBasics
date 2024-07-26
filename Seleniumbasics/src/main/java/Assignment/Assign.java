@@ -31,6 +31,34 @@ public class Assign {
 			System.out.println("********************************");
 		}
 	}
+	public void verifyDynamicWebTable()
+	{
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://money.rediff.com/indices/nse");
+		WebElement showmore=driver.findElement(By.xpath("//a[@id='showMoreLess']"));
+		showmore.click();
+		WebElement fulltable=driver.findElement(By.xpath("//table[@id='dataTable']"));
+		//System.out.println(fulltable.getText());
+		WebElement tablerow=driver.findElement(By.xpath("//table[@id='dataTable']/tbody/tr[5]"));
+		//System.out.println(tablerow.getText());
+		List<WebElement> rows=fulltable.findElements(By.tagName("tr"));
+		int rowsize=rows.size();
+		for(int i=0;i<rowsize;i++)
+		{
+			List<WebElement> columns=rows.get(i).findElements(By.tagName("td"));
+			int columnsize=columns.size();
+			for(int j=0;j<columnsize;j++)
+			{
+				String cellData=columns.get(j).getText();
+				if(cellData.equals("NIFTY BANK"));
+				System.out.println("Prev Close value is"+columns.get(1).getText());
+			}
+			
+		;
+	}
+	driver.close();
+}
 	
 	public void verifyDragAndDrop()
 	{
@@ -168,7 +196,8 @@ public class Assign {
 
 	public static void main(String[] args) {
 		Assign a=new Assign();
-		a.multipleWindowHandling();
+		a.verifyDynamicWebTable();
+		//a.multipleWindowHandling();
 		//a.frames();
 		//a.simpleformdemo();
 		//a.checkboxdemo();
