@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.List;
 
 public class WebTableExample {
@@ -49,10 +52,40 @@ public class WebTableExample {
         // Close the browser
         driver.close();
     }
+    public void verifyFileUpload()
+    {
+    	WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://demo.guru99.com/test/upload/");
+        WebElement fileupload=driver.findElement(By.xpath("//input[@id='uploadfile_0']"));
+        fileupload.sendKeys("C:\\Users\\pooja\\git\\Seleniumbasics\\Seleniumbasics\\src\\main\\resources\\fileupload");
+        WebElement check=driver.findElement(By.id("terms"));
+        check.click();
+        WebElement submit=driver.findElement(By.id("submitbutton"));
+        submit.click();
+        driver.close();
+        
+    	
+    }
 
-    public static void main(String[] args) {
+    
+    public void verifyKeyboardActions() throws AWTException
+    {
+    	WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://demo.guru99.com");
+        Robot robot=new Robot();
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_T);
+        robot.keyRelease(KeyEvent.VK_T);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+    	
+    }
+    public static void main(String[] args) throws AWTException {
         WebTableExample example = new WebTableExample();
-        example.verifyDynamicWebTable();
+        example.verifyKeyboardActions();
+        //example.verifyFileUpload();
+        //example.verifyDynamicWebTable();
     }
 }
 

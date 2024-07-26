@@ -73,6 +73,16 @@ public class Assign {
 		action.contextClick(drag).build().perform();
 		action.dragAndDrop(drag, drop).build().perform();
 		}
+	public void verifyDragAndDropUsingOffset()
+	{
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://demoqa.com/dragabble");
+		WebElement dragbutton=driver.findElement(By.xpath("//div[@id='dragBox']"));
+		Actions action=new Actions(driver);
+		action.dragAndDropBy(dragbutton, 150, 100).build().perform();
+		
+	}
 	public void frames()
 	{
 		WebDriver driver=new ChromeDriver();
@@ -196,7 +206,8 @@ public class Assign {
 
 	public static void main(String[] args) {
 		Assign a=new Assign();
-		a.verifyDynamicWebTable();
+		a.verifyDragAndDropUsingOffset();
+		//a.verifyDynamicWebTable();
 		//a.multipleWindowHandling();
 		//a.frames();
 		//a.simpleformdemo();
