@@ -6,8 +6,8 @@
       <class name="org.TESTNGCommands.Commands">
         <methods>
           <include name="closeBrowser"/>
-          <include name="demowebshop"/>
           <include name="setBrowser"/>
+          <include name="verifyHomePageTitle"/>
         </methods>
       </class> <!-- org.TESTNGCommands.Commands -->
     </classes>
