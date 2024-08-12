@@ -22,7 +22,7 @@ public class Commands extends Base {
 	{
 		driver.get("https://demowebshop.tricentis.com");
 		String actualtitle=driver.getTitle();
-		//System.out.println("Title" +actualtitle);
+		//System.out.println("Title" + actualtitle);
 		String Exceptedtitle="Demo Web Shop";
 		Assert.assertEquals(actualtitle, Exceptedtitle, "Title mismatch");
 

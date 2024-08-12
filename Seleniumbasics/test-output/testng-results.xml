@@ -1,32 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-06T20:43:28 IST" name="Default suite" finished-at="2024-08-06T20:43:57 IST" duration-ms="28221">
+  <suite started-at="2024-08-09T21:05:12 IST" name="Default suite" finished-at="2024-08-09T21:05:30 IST" duration-ms="18517">
     <groups>
     </groups>
-    <test started-at="2024-08-06T20:43:28 IST" name="Default test" finished-at="2024-08-06T20:43:57 IST" duration-ms="28221">
-      <class name="org.TESTNGCommands.Commands">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:org.TESTNGCommands.Commands@5c33f1a9]" started-at="2024-08-06T20:43:29 IST" name="setBrowser" finished-at="2024-08-06T20:43:31 IST" duration-ms="2313" status="PASS">
+    <test started-at="2024-08-09T21:05:12 IST" name="Default test" finished-at="2024-08-09T21:05:30 IST" duration-ms="18517">
+      <class name="testScript.LoginPageTest">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScript.LoginPageTest@67c27493]" started-at="2024-08-09T21:05:12 IST" name="setBrowser" finished-at="2024-08-09T21:05:13 IST" duration-ms="1800" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="verifyFluentWait()[pri:0, instance:org.TESTNGCommands.Commands@5c33f1a9]" started-at="2024-08-06T20:43:31 IST" name="verifyFluentWait" finished-at="2024-08-06T20:43:56 IST" duration-ms="25595" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyFluentWait -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:org.TESTNGCommands.Commands@5c33f1a9]" started-at="2024-08-06T20:43:56 IST" name="closeBrowser" finished-at="2024-08-06T20:43:57 IST" duration-ms="225" status="PASS">
+        <test-method signature="userLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginPageTest@67c27493]" started-at="2024-08-09T21:05:13 IST" name="userLoginWithInvalidCredentials" data-provider="invalidUserCredentials" finished-at="2024-08-09T21:05:19 IST" duration-ms="5439" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyFluentWait status=SUCCESS method=Commands.verifyFluentWait()[pri:0, instance:org.TESTNGCommands.Commands@5c33f1a9] output={null}]]]>
+                <![CDATA[poojapremkuma1@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[poojapremkumar]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userLoginWithInvalidCredentials -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testScript.LoginPageTest@67c27493]" started-at="2024-08-09T21:05:19 IST" name="closeBrowser" finished-at="2024-08-09T21:05:19 IST" duration-ms="332" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=userLoginWithInvalidCredentials status=SUCCESS method=LoginPageTest.userLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginPageTest@67c27493] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- org.TESTNGCommands.Commands -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScript.LoginPageTest@67c27493]" started-at="2024-08-09T21:05:19 IST" name="setBrowser" finished-at="2024-08-09T21:05:21 IST" duration-ms="1348" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="userLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginPageTest@67c27493]" started-at="2024-08-09T21:05:21 IST" name="userLoginWithInvalidCredentials" data-provider="invalidUserCredentials" finished-at="2024-08-09T21:05:24 IST" duration-ms="3651" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[poojapremkumar@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[poojapremkumar11]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userLoginWithInvalidCredentials -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testScript.LoginPageTest@67c27493]" started-at="2024-08-09T21:05:24 IST" name="closeBrowser" finished-at="2024-08-09T21:05:24 IST" duration-ms="288" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=userLoginWithInvalidCredentials status=SUCCESS method=LoginPageTest.userLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginPageTest@67c27493] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScript.LoginPageTest@67c27493]" started-at="2024-08-09T21:05:24 IST" name="setBrowser" finished-at="2024-08-09T21:05:26 IST" duration-ms="1390" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="userLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginPageTest@67c27493]" started-at="2024-08-09T21:05:26 IST" name="userLoginWithInvalidCredentials" data-provider="invalidUserCredentials" finished-at="2024-08-09T21:05:30 IST" duration-ms="3862" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[poojapremkur@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[poojapremk575]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userLoginWithInvalidCredentials -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testScript.LoginPageTest@67c27493]" started-at="2024-08-09T21:05:30 IST" name="closeBrowser" finished-at="2024-08-09T21:05:30 IST" duration-ms="333" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=userLoginWithInvalidCredentials status=SUCCESS method=LoginPageTest.userLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginPageTest@67c27493] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testScript.LoginPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
