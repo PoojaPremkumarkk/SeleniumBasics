@@ -14,7 +14,10 @@ package utilities;
 		static FileInputStream file;
 		static XSSFWorkbook workbook;
 		static XSSFSheet sh;
-		public static String getStringData(int row, int col, String sheet) throws IOException {
+		public static String getStringData(int row, int col, String sheet)  {
+			try
+			{
+				
 	        file = new FileInputStream("C:\\Users\\pooja\\git\\Seleniumbasics\\Project-1\\src\\test\\resources\\TestData1.xlsx");
 	        workbook = new XSSFWorkbook(file);
 	        sh = workbook.getSheet(sheet);
@@ -25,8 +28,14 @@ package utilities;
 	        file.close();
 	        return cellValue;
 	    }
+		catch(Exception e)
+		{
+			throw new RuntimeException("Excel Sheet not found");
+		}}
 
-	    public static String getIntegerData(int row, int col, String sheet) throws IOException {
+	    public static String getIntegerData(int row, int col, String sheet)  {
+	    	try
+			{
 	        file = new FileInputStream("C:\\Users\\pooja\\git\\Seleniumbasics\\Project-1\\src\\test\\resources\\TestData1.xlsx");
 	        workbook = new XSSFWorkbook(file);
 	        sh = workbook.getSheet(sheet);
@@ -37,8 +46,12 @@ package utilities;
 	        file.close();
 	        return String.valueOf(cellValue);
 	    }
+	    catch(Exception e)
+		{
+			throw new RuntimeException("Excel Sheet not found");
+		}
 
 		
-	}
+	}}
 
 

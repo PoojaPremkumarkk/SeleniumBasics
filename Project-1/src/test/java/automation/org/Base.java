@@ -40,6 +40,7 @@ package automation.org;
 				throw new RuntimeException("invalid Browser");
 			}
 			driver.manage().window().maximize();
+			driver.get("https://qalegend.com/billing/public/home");
 		}
 		
 		@BeforeMethod

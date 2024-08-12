@@ -12,9 +12,9 @@ import utilities.ExcelUtility;
 	public class Login extends Base{
 		@Test
 		
-		public void userLoginWithValidCredentials() throws IOException
+		public void userLoginWithValidCredentials() 
 		{
-			driver.get("https://qalegend.com/billing/public/home");
+			//driver.get("https://qalegend.com/billing/public/home");
 			
 			String emailId= ExcelUtility.getStringData(0, 0,"Login");
 			String password=ExcelUtility.getStringData(0, 1, "Login");
@@ -28,9 +28,9 @@ import utilities.ExcelUtility;
 			
 }
 		@Test(dataProvider="invalidUserCredentials", dataProviderClass=DataProviders.class)
-		public void userLoginWithInvalidCredentials(String username,String password) throws IOException
+		public void errorMessageWithInvalidCredentials(String username,String password) 
 		{
-			driver.get("https://qalegend.com/billing/public/home");
+			
 			String errormessage=ExcelUtility.getStringData(0, 2, "Login");
 			WebElement email=driver.findElement(By.xpath("//input[@id='username']"));
 			email.sendKeys(username);

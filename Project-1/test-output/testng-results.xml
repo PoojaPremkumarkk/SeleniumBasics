@@ -1,106 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-12T18:52:38 IST" name="Default suite" finished-at="2024-08-12T18:53:09 IST" duration-ms="31938">
+  <suite started-at="2024-08-12T22:34:52 IST" name="Default suite" finished-at="2024-08-12T22:35:06 IST" duration-ms="13536">
     <groups>
     </groups>
-    <test started-at="2024-08-12T18:52:38 IST" name="Default test" finished-at="2024-08-12T18:53:09 IST" duration-ms="31938">
-      <class name="testscripts.Login">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.Login@351d00c0]" started-at="2024-08-12T18:52:38 IST" name="setBrowser" finished-at="2024-08-12T18:52:39 IST" duration-ms="1590" status="PASS">
+    <test started-at="2024-08-12T22:34:52 IST" name="Default test" finished-at="2024-08-12T22:35:06 IST" duration-ms="13536">
+      <class name="testscripts.Reset">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.Reset@313ac989]" started-at="2024-08-12T22:34:52 IST" name="setBrowser" finished-at="2024-08-12T22:35:03 IST" duration-ms="10672" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="userLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testscripts.Login@351d00c0]" started-at="2024-08-12T18:52:39 IST" name="userLoginWithInvalidCredentials" data-provider="invalidUserCredentials" finished-at="2024-08-12T18:52:51 IST" duration-ms="11377" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[12345678678]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="errormessagewithInvalidEmailid()[pri:0, instance:testscripts.Reset@313ac989]" started-at="2024-08-12T22:35:03 IST" name="errormessagewithInvalidEmailid" finished-at="2024-08-12T22:35:06 IST" duration-ms="2719" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- userLoginWithInvalidCredentials -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.Login@351d00c0]" started-at="2024-08-12T18:52:51 IST" name="closeBrowser" finished-at="2024-08-12T18:52:51 IST" duration-ms="108" status="PASS">
+        </test-method> <!-- errormessagewithInvalidEmailid -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.Reset@313ac989]" started-at="2024-08-12T22:35:06 IST" name="closeBrowser" finished-at="2024-08-12T22:35:06 IST" duration-ms="107" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=userLoginWithInvalidCredentials status=SUCCESS method=Login.userLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testscripts.Login@351d00c0] output={null}]]]>
+                <![CDATA[[TestResult name=errormessagewithInvalidEmailid status=SUCCESS method=Reset.errormessagewithInvalidEmailid()[pri:0, instance:testscripts.Reset@313ac989] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.Login@351d00c0]" started-at="2024-08-12T18:52:51 IST" name="setBrowser" finished-at="2024-08-12T18:52:52 IST" duration-ms="1071" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setBrowser -->
-        <test-method signature="userLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testscripts.Login@351d00c0]" started-at="2024-08-12T18:52:52 IST" name="userLoginWithInvalidCredentials" data-provider="invalidUserCredentials" finished-at="2024-08-12T18:52:58 IST" duration-ms="6653" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[123456]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- userLoginWithInvalidCredentials -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.Login@351d00c0]" started-at="2024-08-12T18:52:58 IST" name="closeBrowser" finished-at="2024-08-12T18:52:58 IST" duration-ms="115" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=userLoginWithInvalidCredentials status=SUCCESS method=Login.userLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testscripts.Login@351d00c0] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.Login@351d00c0]" started-at="2024-08-12T18:52:58 IST" name="setBrowser" finished-at="2024-08-12T18:53:00 IST" duration-ms="1199" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setBrowser -->
-        <test-method signature="userLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testscripts.Login@351d00c0]" started-at="2024-08-12T18:53:00 IST" name="userLoginWithInvalidCredentials" data-provider="invalidUserCredentials" finished-at="2024-08-12T18:53:09 IST" duration-ms="9644" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin12]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[34645575]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- userLoginWithInvalidCredentials -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.Login@351d00c0]" started-at="2024-08-12T18:53:09 IST" name="closeBrowser" finished-at="2024-08-12T18:53:09 IST" duration-ms="123" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=userLoginWithInvalidCredentials status=SUCCESS method=Login.userLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testscripts.Login@351d00c0] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- testscripts.Login -->
+      </class> <!-- testscripts.Reset -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
