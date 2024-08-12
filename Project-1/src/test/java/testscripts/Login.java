@@ -21,7 +21,7 @@ import utilities.ExcelUtility;
 			
 			WebElement email=driver.findElement(By.xpath("//input[@id='username']"));
 			email.sendKeys(emailId);
-			WebElement password1=driver.findElement(By.xpath("//input[@id='Password']"));
+			WebElement password1=driver.findElement(By.xpath("//input[@id='password']"));
 			password1.sendKeys(password);
 			WebElement login=driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
 			login.click();
@@ -34,7 +34,7 @@ import utilities.ExcelUtility;
 			String errormessage=ExcelUtility.getStringData(0, 2, "Login");
 			WebElement email=driver.findElement(By.xpath("//input[@id='username']"));
 			email.sendKeys(username);
-			WebElement password1=driver.findElement(By.xpath("//input[@id='Password']"));
+			WebElement password1=driver.findElement(By.xpath("//input[@id='password']"));
 			password1.sendKeys(password);
 			WebElement login=driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
 			login.click();
