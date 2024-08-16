@@ -9,15 +9,15 @@ import automation.org.Base;
 import dataprovider.DataProviders;
 import utilities.ExcelUtility;
 
-	public class Login extends Base{
+	public class LoginTest extends Base{
 		@Test
 		
 		public void userLoginWithValidCredentials() 
 		{
 			//driver.get("https://qalegend.com/billing/public/home");
 			
-			String emailId= ExcelUtility.getStringData(0, 0,"Login");
-			String password=ExcelUtility.getStringData(0, 1, "Login");
+			String emailId= ExcelUtility.getStringData(0, 0,"LoginTest");
+			String password=ExcelUtility.getStringData(0, 1, "LoginTest");
 			
 			WebElement email=driver.findElement(By.xpath("//input[@id='username']"));
 			email.sendKeys(emailId);
@@ -31,7 +31,7 @@ import utilities.ExcelUtility;
 		public void errorMessageWithInvalidCredentials(String username,String password) 
 		{
 			
-			String errormessage=ExcelUtility.getStringData(0, 2, "Login");
+			String errormessage=ExcelUtility.getStringData(0, 2, "LoginTest");
 			WebElement email=driver.findElement(By.xpath("//input[@id='username']"));
 			email.sendKeys(username);
 			WebElement password1=driver.findElement(By.xpath("//input[@id='password']"));

@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import automation.org.Base;
 import utilities.ExcelUtility;
 
-public class Reset  extends Base {
+public class ResetTest  extends Base {
 	@Test
 	
 	
@@ -17,8 +17,8 @@ public class Reset  extends Base {
 		WebElement forgetpasswordlink=driver.findElement(By.xpath("//a[@class='btn btn-link']"));
 		forgetpasswordlink.click();
 		
-		String emailId= ExcelUtility.getStringData(0, 0,"Reset");
-		String errormessage=ExcelUtility.getStringData(0, 1, "Reset");
+		String emailId= ExcelUtility.getStringData(0, 0,"ResetTest");
+		String errormessage=ExcelUtility.getStringData(0, 1, "ResetTest");
 		WebElement femail=driver.findElement(By.xpath("//input[@id='email']"));
 		femail.sendKeys(emailId);
 		WebElement submit=driver.findElement(By.xpath("//button[@class='btn btn-primary']"));

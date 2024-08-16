@@ -6,9 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import listeners.RetryAnalyser;
+
 public class HomePageScript extends Base{
 	
-@Test
+@Test(retryAnalyzer=RetryAnalyser.class)
 
 
 	public void verifyHomePageTitle()

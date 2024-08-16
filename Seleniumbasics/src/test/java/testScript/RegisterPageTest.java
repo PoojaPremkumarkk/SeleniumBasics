@@ -12,6 +12,7 @@ public class RegisterPageTest extends Base{
 	@Test
 	public void userRegistration()
 	{
+		//java faker example
 		driver.get("https://demowebshop.tricentis.com/register");
 		String firstname=RandomDataUtility.getFirstName();
 		String lastname=RandomDataUtility.getLastName();
