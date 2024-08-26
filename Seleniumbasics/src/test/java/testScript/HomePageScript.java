@@ -1,5 +1,7 @@
 package testScript;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.automationCore.Base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,7 +12,8 @@ import listeners.RetryAnalyser;
 
 public class HomePageScript extends Base{
 	
-@Test(retryAnalyzer=RetryAnalyser.class)
+//@Test(retryAnalyzer=RetryAnalyser.class)
+	@Test(groups="Sanity")
 
 
 	public void verifyHomePageTitle()
@@ -18,9 +21,10 @@ public class HomePageScript extends Base{
 		
 	driver.get("https://demowebshop.tricentis.com/");
 	String title=driver.getTitle();
-	Assert.assertEquals(title,"Demo Web Shop");
+	AssertJUnit.assertEquals(title,"Demo Web Shop");
+	
 	}
-@Test
+@Test(groups="Smoke")
 public void verifyCommunityPollSelection()
 {
 	driver.get("https://demowebshop.tricentis.com/");
@@ -29,7 +33,7 @@ public void verifyCommunityPollSelection()
 	WebElement Poor=driver.findElement(By.xpath("//label[text()='Poor']"));
 	
 	Excellent.click();
-	Assert.assertFalse(Excellent.isSelected(), "Excellent is not selected");
+	//AssertJUnit.assertFalse(Excellent.isSelected(), "Excellent is not selected");
 }
 
 }

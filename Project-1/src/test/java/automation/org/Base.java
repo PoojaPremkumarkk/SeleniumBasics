@@ -1,6 +1,6 @@
 package automation.org;
 
-
+import org.openqa.selenium.By;
 
 	import java.io.File;
 	import java.io.IOException;
@@ -9,13 +9,16 @@ package automation.org;
 	import org.openqa.selenium.OutputType;
 	import org.openqa.selenium.TakesScreenshot;
 	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 	import org.openqa.selenium.edge.EdgeDriver;
 	import org.openqa.selenium.firefox.FirefoxDriver;
 	import org.testng.ITest;
 	import org.testng.ITestResult;
 	import org.testng.annotations.AfterMethod;
 	import org.testng.annotations.BeforeMethod;
+
+import utilities.PageUtility;
 
 	public class Base {
 		
@@ -41,7 +44,11 @@ package automation.org;
 			}
 			driver.manage().window().maximize();
 			driver.get("https://qalegend.com/billing/public/home");
+			 
 		}
+			
+			
+		
 		
 		@BeforeMethod
 		
@@ -62,7 +69,7 @@ package automation.org;
 		
 			
 			
-			driver.close();
+			//driver.close();
 		}
 		public void verifyTakeScreenshot(ITestResult result) throws IOException
 		{

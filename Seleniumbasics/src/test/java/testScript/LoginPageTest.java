@@ -1,5 +1,7 @@
 package testScript;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.automationCore.Base;
@@ -13,7 +15,7 @@ import dataProvider.Dataproviders;
 import utilities.ExcelUtility;
 
 public class LoginPageTest extends Base{
-	@Test
+	@Test(groups= {"Smoke","Sanity"})
 	
 	public void userLoginWithValidCredentials() throws IOException
 	{
