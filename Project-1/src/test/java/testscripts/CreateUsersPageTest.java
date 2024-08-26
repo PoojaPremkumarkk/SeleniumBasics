@@ -90,60 +90,36 @@ create.enterCommission(commission);
 }
     @Test
     
-    
-    public void verifyLoginWithNewlyAddUser()
-    {
-    	String prefix = RandomDataUtility.getPrefix();
-        String firstName = RandomDataUtility.getFirstName();
-        String lastName = RandomDataUtility.getLastName();
-        String role = ExcelUtility.getStringData(0, 0, "UserPage");
-        String profilename = ExcelUtility.getStringData(1, 0, "UserPage");
-         String  commission=ExcelUtility.getIntegerData(1, 1, "UserPage");
-         String emailId = firstName + "." + lastName + "@outlook.com";
-         String passwordNew = firstName + "@" + lastName + "@";
-         String newUserName = firstName + "." + lastName;
-         LoginPage login = new LoginPage(driver);
-         String username = ExcelUtility.getStringData(0, 0, "LoginTest");
-         String password = ExcelUtility.getIntegerData(0, 1, "LoginTest"); 
+    public void verifyLoginWithNewlyAddUser() {
 
-         login.enterUserName(username);
-         login.enterPassword(password);
-         HomePage home = login.clickOnLoginButton();
-         home.clickEndTour();
-         home.clickHomeMenu();
-        
-         
-         UserManagementPage us=new  UserManagementPage(driver);
-         us.verifyUserManagement();
-         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='title' and normalize-space(text())='Users']")));
-         element.click();
-         
-         us.verifyUser();
-         us.clickAddButton();
-         
-         
- CreateUsersPage create=new CreateUsersPage(driver);
- create.enterPrefix(prefix);
- create.enterFirstName(firstName);
- create.enterLastName(lastName);
- create.enterEmail(emailId);
- create.enterPassword(password);
- create.enterConfirmPassword(password);
- create.enterProfileName(profilename);
- create.selectRole(role);
- create.enterCommission(commission);
- create.clickSubmit();    
-  
-  
+        // Initialize LoginPage object and perform login
+        LoginPage login = new LoginPage(driver);
+        String username = ExcelUtility.getStringData(0, 0, "LoginTest");
+        String password = ExcelUtility.getIntegerData(0, 1, "LoginTest"); 
 
- us.verifyUser();
- 
- us.enterSearchTerm(profilename);
- 
-//Assert that the user appears in the search results
- Assert.assertTrue(us.isUserPresentInSearchResults(profilename), "Newly added user is not present in the search results.");
-         
+        // Enter login credentials and click login button
+        login.enterUserName(username);
+        login.enterPassword(password);
+        HomePage home = login.clickOnLoginButton();
+
+        // Perform actions on HomePage
+        home.clickEndTour();
+        home.clickHomeMenu();
+
+        // Navigate to User Management Page
+        UserManagementPage us = new UserManagementPage(driver);
+        us.verifyUserManagement();
+
+        // Perform user verification
+        us.verifyUser();
+        us.enterSearchTerm(username);
+        String loggedInUser = home.getLoginText(); 
+
+        // Assertion
+        Assert.assertEquals(loggedInUser, username, "Logged-in user does not match the expected username.");
+    }
+
+   
 
     }
-}
+

@@ -25,10 +25,6 @@ public class HomePageTest extends Base{
         HomePage home = login.clickOnLoginButton();
         home.clickEndTour();
         home.clickHomeMenu();
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        //WebElement signOutButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[text()='Sign Out']")));
-
-        //signOutButton.click();
         home.clickLogout();
 	}
 	

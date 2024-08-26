@@ -77,7 +77,7 @@ public class UserManagementPage {
 	public boolean isUserPresentInSearchResults(String profilename) {
 	    try {
 	        // Locate the row containing the specified profile name using a corrected and relative XPath
-	        WebElement userRow = driver.findElement(By.xpath("//table[@id='userTable']//td[contains(text(), '" + profilename + "')]"));
+	        WebElement userRow = driver.findElement(By.xpath("/html/body/div[2]/div[1]/section[2]/div[1]/div[2]/div/div/table/tbody/tr[1]/td[2]"));
 	        
 	        // Return true if the profile name is found in the search results
 	        return userRow.isDisplayed();

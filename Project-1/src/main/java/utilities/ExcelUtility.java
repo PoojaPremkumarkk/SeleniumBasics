@@ -10,6 +10,8 @@ package utilities;
 	import org.apache.poi.xssf.usermodel.XSSFSheet;
 	import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import constants.Constants;
+
 	public class ExcelUtility {
 		static FileInputStream file;
 		static XSSFWorkbook workbook;
@@ -18,7 +20,8 @@ package utilities;
 			try
 			{
 				
-	        file = new FileInputStream("C:\\Users\\pooja\\git\\Seleniumbasics\\Project-1\\src\\test\\resources\\TestData1.xlsx");
+			String path=Constants.HOME_DIRECTORY+Constants.TESTDATA_EXCELPATH;	
+	        file = new FileInputStream(path);
 	        workbook = new XSSFWorkbook(file);
 	        sh = workbook.getSheet(sheet);
 	        XSSFRow r = sh.getRow(row);
@@ -36,8 +39,9 @@ package utilities;
 	    public static String getIntegerData(int row, int col, String sheet)  {
 	    	try
 			{
-	        file = new FileInputStream("C:\\Users\\pooja\\git\\Seleniumbasics\\Project-1\\src\\test\\resources\\TestData1.xlsx");
-	        workbook = new XSSFWorkbook(file);
+	    	String path=Constants.HOME_DIRECTORY+Constants.TESTDATA_EXCELPATH;	
+		    file = new FileInputStream(path);
+	        
 	        sh = workbook.getSheet(sheet);
 	        XSSFRow r = sh.getRow(row);
 	        XSSFCell c = r.getCell(col);
