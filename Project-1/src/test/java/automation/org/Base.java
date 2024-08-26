@@ -69,7 +69,7 @@ import utilities.PageUtility;
 		
 			
 			
-			//driver.close();
+			driver.close();
 		}
 		public void verifyTakeScreenshot(ITestResult result) throws IOException
 		{

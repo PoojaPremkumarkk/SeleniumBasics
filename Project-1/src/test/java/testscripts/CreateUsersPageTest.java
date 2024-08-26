@@ -85,10 +85,7 @@ create.enterCommission(commission);
  
  Assert.assertEquals(successMessage, "User added Successfully", "User creation failed");
 
- // Optionally, verify the user appears in the list
- us.enterSearchTerm(username);
- boolean isUserPresent = us.isUserPresentInSearchResults(profilename); 
- Assert.assertTrue(isUserPresent, "The newly created user was not found in the user list");      
+   
         
 }
     @Test

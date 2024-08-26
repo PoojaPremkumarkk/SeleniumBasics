@@ -6,7 +6,7 @@
       <class name="testscripts.ResetTest">
         <methods>
           <include name="setBrowser"/>
-          <include name="passwordResetwithValidEmailid"/>
+          <include name="errormessagewithInvalidEmailid"/>
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- testscripts.ResetTest -->
