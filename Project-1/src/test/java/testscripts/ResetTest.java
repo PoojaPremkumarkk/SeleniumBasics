@@ -6,6 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automation.org.Base;
+import pageObjects.LoginPage;
+import pageObjects.ResetPage;
 import utilities.ExcelUtility;
 
 public class ResetTest  extends Base {
@@ -33,11 +35,13 @@ public class ResetTest  extends Base {
 	
 	public void passwordResetwithValidEmailid()
 	{
-		WebElement forgetpasswordlink=driver.findElement(By.xpath("//a[@class='btn btn-link']"));
-		forgetpasswordlink.click();
+		//WebElement forgetpasswordlink=driver.findElement(By.xpath("//a[@class='btn btn-link']"));
+		//forgetpasswordlink.click();
 		
-		String emailId= ExcelUtility.getStringData(1, 0,"Reset");
-		String errormessage=ExcelUtility.getStringData(1, 1, "Reset");
+		ResetPage page1=new ResetPage(driver);
+		page1.clickResetLink();
+		String emailId= ExcelUtility.getStringData(1, 0,"ResetTest");
+		String errormessage=ExcelUtility.getStringData(1, 1, "ResetTest");
 		WebElement femail=driver.findElement(By.xpath("//input[@id='email']"));
 		femail.sendKeys(emailId);
 		WebElement submit=driver.findElement(By.xpath("//button[@class='btn btn-primary']"));

@@ -40,6 +40,7 @@ public class HomePage {
     // Method to click on the home menu
     public void clickHomeMenu() {
         homeMenuPage.click();
+        homeMenuPage.click();
     }
 
     // Method to verify the login name

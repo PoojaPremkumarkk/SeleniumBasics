@@ -1,8 +1,9 @@
 package testscripts;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -28,6 +29,7 @@ public class CreateUsersPageTest extends Base {
         String role = ExcelUtility.getStringData(0, 0, "UserPage");
         String profilename = ExcelUtility.getStringData(1, 0, "UserPage");
          String  commission=ExcelUtility.getIntegerData(1, 1, "UserPage");
+         String successMessage =ExcelUtility.getStringData(2, 0, "UserPage");
         // Log details for debugging purposes
         System.out.println("Prefix: " + prefix);
         System.out.println("First Name: " + firstName);
@@ -60,6 +62,10 @@ public class CreateUsersPageTest extends Base {
         
         UserManagementPage us=new  UserManagementPage(driver);
         us.verifyUserManagement();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='title' and normalize-space(text())='Users']")));
+        element.click();
+
         us.verifyUser();
         us.clickAddButton();
         
@@ -68,6 +74,7 @@ CreateUsersPage create=new CreateUsersPage(driver);
 create.enterPrefix(prefix);
 create.enterFirstName(firstName);
 create.enterLastName(lastName);
+create.enterEmail(emailId);
 create.enterPassword(password);
 create.enterConfirmPassword(password);
 create.enterProfileName(profilename);
@@ -75,9 +82,71 @@ create.selectRole(role);
 create.enterCommission(commission);
  create.clickSubmit();     
         
+ 
+ Assert.assertEquals(successMessage, "User added Successfully", "User creation failed");
+
+ // Optionally, verify the user appears in the list
+ us.enterSearchTerm(username);
+ boolean isUserPresent = us.isUserPresentInSearchResults(profilename); 
+ Assert.assertTrue(isUserPresent, "The newly created user was not found in the user list");      
         
+}
+    @Test
+    
+    
+    public void verifyLoginWithNewlyAddUser()
+    {
+    	String prefix = RandomDataUtility.getPrefix();
+        String firstName = RandomDataUtility.getFirstName();
+        String lastName = RandomDataUtility.getLastName();
+        String role = ExcelUtility.getStringData(0, 0, "UserPage");
+        String profilename = ExcelUtility.getStringData(1, 0, "UserPage");
+         String  commission=ExcelUtility.getIntegerData(1, 1, "UserPage");
+         String emailId = firstName + "." + lastName + "@outlook.com";
+         String passwordNew = firstName + "@" + lastName + "@";
+         String newUserName = firstName + "." + lastName;
+         LoginPage login = new LoginPage(driver);
+         String username = ExcelUtility.getStringData(0, 0, "LoginTest");
+         String password = ExcelUtility.getIntegerData(0, 1, "LoginTest"); 
+
+         login.enterUserName(username);
+         login.enterPassword(password);
+         HomePage home = login.clickOnLoginButton();
+         home.clickEndTour();
+         home.clickHomeMenu();
         
-       
-       
+         
+         UserManagementPage us=new  UserManagementPage(driver);
+         us.verifyUserManagement();
+         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='title' and normalize-space(text())='Users']")));
+         element.click();
+         
+         us.verifyUser();
+         us.clickAddButton();
+         
+         
+ CreateUsersPage create=new CreateUsersPage(driver);
+ create.enterPrefix(prefix);
+ create.enterFirstName(firstName);
+ create.enterLastName(lastName);
+ create.enterEmail(emailId);
+ create.enterPassword(password);
+ create.enterConfirmPassword(password);
+ create.enterProfileName(profilename);
+ create.selectRole(role);
+ create.enterCommission(commission);
+ create.clickSubmit();    
+  
+  
+
+ us.verifyUser();
+ 
+ us.enterSearchTerm(profilename);
+ 
+//Assert that the user appears in the search results
+ Assert.assertTrue(us.isUserPresentInSearchResults(profilename), "Newly added user is not present in the search results.");
+         
+
     }
 }

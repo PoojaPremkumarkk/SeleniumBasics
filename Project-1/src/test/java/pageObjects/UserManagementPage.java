@@ -1,5 +1,8 @@
 package pageObjects;
 
+import java.util.NoSuchElementException;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +22,7 @@ public class UserManagementPage {
     @FindBy(xpath="//span[text()='User Management']")
 	WebElement usermanagement;
     
-	//@FindBy(xpath="//li[@class='active active-sub']//following-sibling::span")
+	
     
     @FindBy(xpath="//span[@class='title' and normalize-space(text())='Users']")
       WebElement users;
@@ -31,10 +34,9 @@ public class UserManagementPage {
     WebElement adduser;
     
 	@FindBy(xpath="//input[@class='form-control input-sm']")
-	WebElement SearchButton;
 	
-	@FindBy(xpath="//table[@id='users_table']/tbody/tr[1]/td[1]")
-	WebElement  alreadyusers;
+	WebElement searchButton;
+	
 	
 	
 	@FindBy(xpath="//i[@class='fa fa-dashboard']")
@@ -46,6 +48,7 @@ public class UserManagementPage {
 	public void verifyUser()
 	{
 		users.click();
+		
 	}
 	public void clickAddButton() {
 		adduser.click();
@@ -53,15 +56,12 @@ public class UserManagementPage {
 	
 	
 	
-	public void verifySearchField(String username)
-	{
-		SearchButton.sendKeys(username);
-	}
-	public String verifySearchResults()
-	{
-		String name = alreadyusers.getText();
-		return name;
-	}
+	
+	public void enterSearchTerm(String userName) {
+        searchButton.clear();
+        searchButton.sendKeys(userName);
+    }
+	
 	public CreateUsersPage verifyAddUser()
 	{
 		addbutton.click();
@@ -72,6 +72,22 @@ public class UserManagementPage {
 		home.click();
 		return new HomePage(driver);
 	}
-    
-}
+	
+	
+	public boolean isUserPresentInSearchResults(String profilename) {
+	    try {
+	        // Locate the row containing the specified profile name using a corrected and relative XPath
+	        WebElement userRow = driver.findElement(By.xpath("//table[@id='userTable']//td[contains(text(), '" + profilename + "')]"));
+	        
+	        // Return true if the profile name is found in the search results
+	        return userRow.isDisplayed();
+	    } catch (NoSuchElementException e) {
+	        // Return false if the profile name is not found
+	        return false;
+	    }
+	}
+
+	}
+
+
 
