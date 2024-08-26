@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.time.Duration;
 import automation.org.Base;
+import constants.Constants;
 import pageObjects.CreateUsersPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
@@ -20,16 +21,16 @@ public class CreateUsersPageTest extends Base {
 
     @Test
     public void verifyAddUser() {
-      
-        
+
         // Retrieve random and static data for user creation
         String prefix = RandomDataUtility.getPrefix();
         String firstName = RandomDataUtility.getFirstName();
         String lastName = RandomDataUtility.getLastName();
-        String role = ExcelUtility.getStringData(0, 0, "UserPage");
-        String profilename = ExcelUtility.getStringData(1, 0, "UserPage");
-         String  commission=ExcelUtility.getIntegerData(1, 1, "UserPage");
-         String successMessage =ExcelUtility.getStringData(2, 0, "UserPage");
+        String role = ExcelUtility.getStringData(0, 0, Constants.USERPAGE);
+        String profileName = ExcelUtility.getStringData(1, 0,Constants.USERPAGE);
+        String commission = ExcelUtility.getIntegerData(1, 1,Constants.USERPAGE);
+        String successMessage = ExcelUtility.getStringData(2, 0,Constants.USERPAGE);
+
         // Log details for debugging purposes
         System.out.println("Prefix: " + prefix);
         System.out.println("First Name: " + firstName);
@@ -42,61 +43,56 @@ public class CreateUsersPageTest extends Base {
 
         // Initialize LoginPage object and perform login
         LoginPage login = new LoginPage(driver);
-        String username = ExcelUtility.getStringData(0, 0, "LoginTest");
-        String password = ExcelUtility.getIntegerData(0, 1, "LoginTest"); 
+        String username = ExcelUtility.getStringData(0, 0,Constants.LOGINPAGE);
+        String password = ExcelUtility.getIntegerData(0, 1,Constants.LOGINPAGE); 
 
         login.enterUserName(username);
         login.enterPassword(password);
-        
 
         // Wait for HomePage to be displayed after login
         HomePage home = login.clickOnLoginButton();
-        //String actualLoginName = home.getLoginText();
-       // String expectedLoginName = "Admin"; 
-        //Assert.assertEquals(actualLoginName, expectedLoginName, "Invalid login name displayed");
 
         // Perform actions on HomePage
         home.clickEndTour();
         home.clickHomeMenu();
-       
-        
-        UserManagementPage us=new  UserManagementPage(driver);
+
+        // Navigate to User Management Page
+        UserManagementPage us = new UserManagementPage(driver);
         us.verifyUserManagement();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='title' and normalize-space(text())='Users']")));
-        element.click();
+       // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        //WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='title' and normalize-space(text())='Users']")));
+        //element.click();
 
         us.verifyUser();
         us.clickAddButton();
-        
-        
-CreateUsersPage create=new CreateUsersPage(driver);
-create.enterPrefix(prefix);
-create.enterFirstName(firstName);
-create.enterLastName(lastName);
-create.enterEmail(emailId);
-create.enterPassword(password);
-create.enterConfirmPassword(password);
-create.enterProfileName(profilename);
-create.selectRole(role);
-create.enterCommission(commission);
- create.clickSubmit();     
-        
- 
- Assert.assertEquals(successMessage, "User added Successfully", "User creation failed");
 
-   
-        
-}
+        // Create a new user
+        CreateUsersPage create = new CreateUsersPage(driver);
+        create.enterPrefix(prefix);
+        create.enterFirstName(firstName);
+        create.enterLastName(lastName);
+        create.enterEmail(emailId);
+        create.enterPassword(password);
+        create.enterConfirmPassword(password); 
+        create.enterProfileName(profileName);
+        create.selectRole(role);
+        create.enterCommission(commission);
+        create.clickSubmit();
+
+        // Assert success message
+        Assert.assertEquals(successMessage, "User added Successfully", "User creation failed");
+    }
+
     @Test
     
     public void verifyLoginWithNewlyAddUser() {
 
         // Initialize LoginPage object and perform login
         LoginPage login = new LoginPage(driver);
-        String username = ExcelUtility.getStringData(0, 0, "LoginTest");
-        String password = ExcelUtility.getIntegerData(0, 1, "LoginTest"); 
-
+       String username = ExcelUtility.getStringData(0, 0,Constants.LOGINPAGE);
+        String password = ExcelUtility.getIntegerData(0, 1, Constants.LOGINPAGE); 
+        
+ 
         // Enter login credentials and click login button
         login.enterUserName(username);
         login.enterPassword(password);

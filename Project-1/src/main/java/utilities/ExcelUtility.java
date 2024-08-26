@@ -20,7 +20,7 @@ import constants.Constants;
 			try
 			{
 				
-			String path=Constants.HOME_DIRECTORY+Constants.TESTDATA_EXCELPATH;	
+			String path=Constants.HOME_DIRECTORY+Constants.TESTDATA_EXCELPATH;
 	        file = new FileInputStream(path);
 	        workbook = new XSSFWorkbook(file);
 	        sh = workbook.getSheet(sheet);
