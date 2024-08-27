@@ -30,10 +30,7 @@ public class UserProfilePage {
     @FindBy(xpath = "//button[text()='Update']")
     WebElement updateButton;
     
-    @FindBy(xpath="//table[@id='users_table']//tr//td[4]")
-    WebElement searchemailid;
-    
-    @FindBy(xpath="//button[@class='btn btn-xs btn-danger delete_user_button']")
+     @FindBy(xpath="//button[@class='btn btn-xs btn-danger delete_user_button']")
     WebElement deleteButton;
     
     @FindBy(xpath="//button[@class='swal-button swal-button--confirm swal-button--danger']")
