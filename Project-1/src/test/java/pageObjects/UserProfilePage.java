@@ -29,6 +29,9 @@ public class UserProfilePage {
 
     @FindBy(xpath = "//button[text()='Update']")
     WebElement updateButton;
+    
+    @FindBy(xpath="//table[@id='users_table']//tr//td[4]")
+    WebElement searchemailid;
 
     public void clickOnProfile() {
         wait.until(ExpectedConditions.elementToBeClickable(profile)).click();

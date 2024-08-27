@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testscripts.UserProfileTest">
+      <class name="testscripts.UsersDeletionAndViewUsers">
         <methods>
           <include name="setBrowser"/>
           <include name="verifyDeleteProfile"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- testscripts.UserProfileTest -->
+      </class> <!-- testscripts.UsersDeletionAndViewUsers -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

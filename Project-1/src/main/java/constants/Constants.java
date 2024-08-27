@@ -8,7 +8,7 @@ public class Constants {
     public static final String USERPAGE = "UserPage";
     public static final String DOTEMAIL=".";
     public static final String ATEMAIL="@";
-    public static final String OUTLOOK=" @outlook.com";
+    public static final String OUTLOOK="gmailcom";
     public static final String EDIT="EditTest";
    
 }

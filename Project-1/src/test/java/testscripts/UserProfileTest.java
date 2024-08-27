@@ -46,5 +46,3 @@ public void verifyEditProfile() {
     Assert.assertEquals(updatedLastName, newLastName,Messages.LASTNAMEERRMSG);
 }
 }
-
-

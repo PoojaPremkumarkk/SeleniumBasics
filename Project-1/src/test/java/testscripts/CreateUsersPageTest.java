@@ -1,7 +1,13 @@
 package testscripts;
 
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import java.time.Duration;
 import automation.org.Base;
 import constants.Constants;
 import constants.Messages;
@@ -26,7 +32,7 @@ public class CreateUsersPageTest extends Base {
         String successMessage = ExcelUtility.getStringData(2, 0, Constants.USERPAGE);
         String username=RandomDataUtility.getUserName();
         // Construct email ID and password based on user details
-        String emailId = firstName +Constants.DOTEMAIL + lastName + Constants.OUTLOOK;
+        String emailId = firstName + Constants.DOTEMAIL +lastName+Constants.ATEMAIL+ Constants.OUTLOOK;
         String passwordNew = firstName +Constants.ATEMAIL+ lastName + Constants.ATEMAIL;
  
         // Initialize LoginPage object and perform login
