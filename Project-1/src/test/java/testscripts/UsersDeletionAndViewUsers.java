@@ -125,8 +125,8 @@ public class UsersDeletionAndViewUsers extends Base {
 	    us.enterSearchTerm(emailId);//search username
         UserProfilePage profile=new UserProfilePage(driver);
         profile.clickOnViewButton();
-        //boolean isUserPresent = us.isUserPresent(emailId);
-        //Assert.assertEquals(isUserPresent,emailId,Messages.USERADDFAILED);
+        String actualname=profile.getProfileName();
+        Assert.assertNotEquals(actualname,username,Messages.USERADDFAILED);
         
 	}
 		

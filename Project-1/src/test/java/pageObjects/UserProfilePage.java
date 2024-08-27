@@ -41,6 +41,14 @@ public class UserProfilePage {
     
     @FindBy(xpath="//i[@class='fa fa-eye']")
     WebElement viewButton;
+    
+    @FindBy(xpath="//h3[@class='profile-username']")
+    WebElement profileUserName;
+    
+    public String getProfileName()
+    {
+    	return profileUserName.getText();
+    }
 
     public void clickOnProfile() {
         wait.until(ExpectedConditions.elementToBeClickable(profile)).click();
