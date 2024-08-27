@@ -1,11 +1,10 @@
 package pageObjects;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ResetPage {
@@ -34,6 +33,7 @@ public class ResetPage {
 	
 	@FindBy(xpath="//span[@class='help-block']//strong")
 	WebElement failure;
+	
     public void clickResetLink()
     {
     	resetLink.click();
@@ -45,7 +45,7 @@ public class ResetPage {
     }
     
     public void enterEmail(String email) {
-    	// WebElement emailInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='email']")));
+    	
         femail.sendKeys(email);
 }
 

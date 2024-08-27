@@ -32,6 +32,15 @@ public class UserProfilePage {
     
     @FindBy(xpath="//table[@id='users_table']//tr//td[4]")
     WebElement searchemailid;
+    
+    @FindBy(xpath="//button[@class='btn btn-xs btn-danger delete_user_button']")
+    WebElement deleteButton;
+    
+    @FindBy(xpath="//button[@class='swal-button swal-button--confirm swal-button--danger']")
+    WebElement deleteOKButton;
+    
+    @FindBy(xpath="//i[@class='fa fa-eye']")
+    WebElement viewButton;
 
     public void clickOnProfile() {
         wait.until(ExpectedConditions.elementToBeClickable(profile)).click();
@@ -48,6 +57,21 @@ public class UserProfilePage {
     public HomePage clickUpdateButton() {
         wait.until(ExpectedConditions.elementToBeClickable(updateButton)).click();
         return new HomePage(driver);
+    }
+    public void clickOnDeleteButton()
+    {
+    	wait.until(ExpectedConditions.elementToBeClickable(deleteButton)).click();
+    	
+    }
+    public void clickOnDeleteOKButton()
+    {
+    	wait.until(ExpectedConditions.elementToBeClickable(deleteOKButton)).click();
+    }
+    
+    public HomePage clickOnViewButton()
+    {
+    	wait.until(ExpectedConditions.elementToBeClickable(viewButton)).click();
+    	return new HomePage(driver);
     }
 
     public String getLastName() {

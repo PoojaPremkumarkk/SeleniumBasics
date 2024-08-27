@@ -5,8 +5,8 @@
     <classes>
       <class name="testscripts.UsersDeletionAndViewUsers">
         <methods>
+          <include name="viewUserProfile"/>
           <include name="setBrowser"/>
-          <include name="verifyDeleteProfile"/>
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- testscripts.UsersDeletionAndViewUsers -->

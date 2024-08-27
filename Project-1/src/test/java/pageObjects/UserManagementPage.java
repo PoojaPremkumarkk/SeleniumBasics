@@ -70,6 +70,12 @@ public class UserManagementPage {
         return new HomePage(driver);
     }
 
+	public boolean isUserPresent(String emailId) {
+		// TODO Auto-generated method stub
+		searchButton.sendKeys(emailId);
+		return false;
+	}
+
    
     
 }
