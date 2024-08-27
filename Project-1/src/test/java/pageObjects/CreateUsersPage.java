@@ -40,7 +40,7 @@ public class CreateUsersPage {
     @FindBy(xpath = "//input[@id='confirm_password']")
     private WebElement confirmpassword;
      @FindBy(xpath="//input[@id='username']")
-     WebElement profilename;
+     WebElement username;
     @FindBy(xpath="//input[@id='cmmsn_percent']")
     WebElement  commission;
     
@@ -97,7 +97,7 @@ public class CreateUsersPage {
     
     // Method to enter username
     public void enterProfileName(String pname) {
-        profilename.sendKeys(pname);
+        username.sendKeys(pname);
     }
     
 

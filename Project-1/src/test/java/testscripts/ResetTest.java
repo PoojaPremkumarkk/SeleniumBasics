@@ -8,6 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automation.org.Base;
+import constants.Constants;
+import constants.Messages;
 import pageObjects.LoginPage;
 import pageObjects.ResetPage;
 import utilities.ExcelUtility;
@@ -18,35 +20,32 @@ public class ResetTest  extends Base {
 	
 	public void errormessagewithInvalidEmailid()
 	{
-		//WebElement forgetpasswordlink=driver.findElement(By.xpath("//a[@class='btn btn-link']"));
-		//forgetpasswordlink.click();
+		
 		ResetPage reset=new ResetPage(driver);
 		reset.clickResetLink();
-		String emailId= ExcelUtility.getStringData(0, 0,"ResetTest");
-		String errormessage=ExcelUtility.getStringData(0, 1, "ResetTest");
+		String emailId= ExcelUtility.getStringData(0, 0,Constants.RESETPAGE);
+		String errormessage=ExcelUtility.getStringData(0, 1,Constants.RESETPAGE);
 		reset.enterEmail(emailId);
 		reset.clickSubmit();
 		String actualerrormsg=reset.getErrorMessage();
 		
-		Assert.assertEquals(actualerrormsg,errormessage,"Invalid RESET Credentials" );
+		Assert.assertEquals(actualerrormsg,errormessage,Messages.INVALIDCREDS );
 		
 }
 	@Test
 	
 	public void passwordResetwithValidEmailid()
 	{
-		//WebElement forgetpasswordlink=driver.findElement(By.xpath("//a[@class='btn btn-link']"));
-		//forgetpasswordlink.click();
 		
 		ResetPage reset=new ResetPage(driver);
 		reset.clickResetLink();
-		String emailId= ExcelUtility.getStringData(1, 0,"ResetTest");
+		String emailId= ExcelUtility.getStringData(1, 0,Constants.RESETPAGE);
 		reset.enterEmail(emailId);
 		reset.clickSubmit();
-		String expectedSuccessMessage = ExcelUtility.getStringData(0, 2, "ResetTest");
+		String expectedSuccessMessage = ExcelUtility.getStringData(0, 2,Constants.RESETPAGE);
 		String actualSuccessMessage=reset.getSuccessMessage();
 		
-		assertEquals("We have e-mailed your password reset link!", expectedSuccessMessage, actualSuccessMessage);
+		assertEquals(Messages.RESETINLINEERRORMSG, expectedSuccessMessage, actualSuccessMessage);
 		
 	}
 }

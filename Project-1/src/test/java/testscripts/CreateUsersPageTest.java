@@ -1,15 +1,10 @@
 package testscripts;
 
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import java.time.Duration;
 import automation.org.Base;
 import constants.Constants;
+import constants.Messages;
 import pageObjects.CreateUsersPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
@@ -19,37 +14,30 @@ import utilities.RandomDataUtility;
 
 public class CreateUsersPageTest extends Base {
 
-    @Test
-    public void verifyAddUser() {
+	@Test
 
+        public void verifyAddUser1() {
         // Retrieve random and static data for user creation
         String prefix = RandomDataUtility.getPrefix();
         String firstName = RandomDataUtility.getFirstName();
         String lastName = RandomDataUtility.getLastName();
         String role = ExcelUtility.getStringData(0, 0, Constants.USERPAGE);
-        String profileName = ExcelUtility.getStringData(1, 0,Constants.USERPAGE);
-        String commission = ExcelUtility.getIntegerData(1, 1,Constants.USERPAGE);
-        String successMessage = ExcelUtility.getStringData(2, 0,Constants.USERPAGE);
-
-        // Log details for debugging purposes
-        System.out.println("Prefix: " + prefix);
-        System.out.println("First Name: " + firstName);
-        System.out.println("Last Name: " + lastName);
-
+        String commission = ExcelUtility.getIntegerData(1, 1, Constants.USERPAGE);
+        String successMessage = ExcelUtility.getStringData(2, 0, Constants.USERPAGE);
+        String username=RandomDataUtility.getUserName();
         // Construct email ID and password based on user details
-        String emailId = firstName + "." + lastName + "@outlook.com";
-        String passwordNew = firstName + "@" + lastName + "@";
-        String newUserName = firstName + "." + lastName;
-
+        String emailId = firstName +Constants.DOTEMAIL + lastName + Constants.OUTLOOK;
+        String passwordNew = firstName +Constants.ATEMAIL+ lastName + Constants.ATEMAIL;
+ 
         // Initialize LoginPage object and perform login
         LoginPage login = new LoginPage(driver);
-        String username = ExcelUtility.getStringData(0, 0,Constants.LOGINPAGE);
-        String password = ExcelUtility.getIntegerData(0, 1,Constants.LOGINPAGE); 
+        String Adminname = ExcelUtility.getStringData(0, 0, Constants.LOGINPAGE);
+        String password = ExcelUtility.getIntegerData(0, 1, Constants.LOGINPAGE);
 
-        login.enterUserName(username);
+        login.enterUserName(Adminname);
         login.enterPassword(password);
 
-        // Wait for HomePage to be displayed after login
+        // Perform login and wait for the HomePage to load
         HomePage home = login.clickOnLoginButton();
 
         // Perform actions on HomePage
@@ -59,10 +47,6 @@ public class CreateUsersPageTest extends Base {
         // Navigate to User Management Page
         UserManagementPage us = new UserManagementPage(driver);
         us.verifyUserManagement();
-       // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        //WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='title' and normalize-space(text())='Users']")));
-        //element.click();
-
         us.verifyUser();
         us.clickAddButton();
 
@@ -72,20 +56,21 @@ public class CreateUsersPageTest extends Base {
         create.enterFirstName(firstName);
         create.enterLastName(lastName);
         create.enterEmail(emailId);
-        create.enterPassword(password);
-        create.enterConfirmPassword(password); 
-        create.enterProfileName(profileName);
+        create.enterPassword(passwordNew);  
+        create.enterConfirmPassword(passwordNew); 
+        create.enterProfileName(username);
         create.selectRole(role);
         create.enterCommission(commission);
         create.clickSubmit();
 
         // Assert success message
-        Assert.assertEquals(successMessage, "User added Successfully", "User creation failed");
+        Assert.assertEquals(successMessage, Messages.USERADDEDSUCCESS,Messages.ADDUSERFAIL);
     }
 
-    @Test
     
-    public void verifyLoginWithNewlyAddUser() {
+         @Test
+    
+         public void verifyLoginWithNewlyAddUser() {
 
         // Initialize LoginPage object and perform login
         LoginPage login = new LoginPage(driver);
@@ -110,12 +95,12 @@ public class CreateUsersPageTest extends Base {
         us.verifyUser();
         us.enterSearchTerm(username);
         String loggedInUser = home.getLoginText(); 
-
+        
         // Assertion
-        Assert.assertEquals(loggedInUser, username, "Logged-in user does not match the expected username.");
+        Assert.assertEquals(loggedInUser, username,Messages.LOGGEDINNOTMATCH);
     }
+         
 
-   
 
     }
 

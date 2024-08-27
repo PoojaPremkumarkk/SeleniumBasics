@@ -28,6 +28,9 @@ public class LoginPage {
 
     @FindBy(xpath = "//span[text()='User Management']")
     WebElement usermanagement; // XPath for user management (move this to HomePage if needed)
+    
+    @FindBy(xpath="//strong[text()='These credentials do not match our records.']")
+    WebElement actualerror;
 
     // Method to enter the username
     public void enterUserName(String username) {
@@ -44,9 +47,20 @@ public class LoginPage {
         loginButton.click();
         return new HomePage(driver); //login takes you to the HomePage
     }
+    
+    public String getActualErrorMessageText() {
+        return actualerror.getText();
+    }
 
     // Method to click on the user management option (if required immediately after login)
     public void clickUserManagement() {
         usermanagement.click();
     }
+
+	public boolean isLoginPageDisplayed() {
+		// TODO Auto-generated method stub
+		return usernameField.isDisplayed() && 
+	               passwordField.isDisplayed() && 
+	               loginButton.isDisplayed();
+	}
 }

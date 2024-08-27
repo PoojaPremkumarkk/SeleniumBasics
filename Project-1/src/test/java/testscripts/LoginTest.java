@@ -9,6 +9,8 @@ package testscripts;
 		import org.testng.annotations.Test;
 
 import automation.org.Base;
+import constants.Constants;
+import constants.Messages;
 import dataprovider.DataProviders;
 import pageObjects.HomePage;
 		import pageObjects.LoginPage;
@@ -19,9 +21,9 @@ import pageObjects.HomePage;
 		    @Test
 		    public void userLoginWithValidCredentials() {
 		        // Retrieve data from Excel
-		        String emailId = ExcelUtility.getStringData(0, 0, "LoginTest");
-		        String password = ExcelUtility.getIntegerData(0, 1, "LoginTest"); 
-		        String expectedLoginName = ExcelUtility.getStringData(0, 0, "LoginTest");
+		        String emailId = ExcelUtility.getStringData(0, 0, Constants.LOGINPAGE);
+		        String password = ExcelUtility.getIntegerData(0, 1, Constants.LOGINPAGE); 
+		        String expectedLoginName = ExcelUtility.getStringData(0, 0, Constants.LOGINPAGE);
 
 		        // Perform login actions
 		        LoginPage login = new LoginPage(driver);
@@ -35,26 +37,26 @@ import pageObjects.HomePage;
 		        String actualText = home.getLoginText();
 
 		        // Assert the expected vs actual login text
-		        Assert.assertEquals(actualText, expectedLoginName, "Invalid login");
+		        Assert.assertEquals(actualText, expectedLoginName,Messages.LOGINNAMEMISMATCH);
 		    }
 
-		    @Test(dataProvider = "invalidUserCredentials", dataProviderClass = DataProviders.class)
-		    public void errorMessageWithInvalidCredentials(String username, String password) {
+		    @Test
+		    public void errorMessageWithInvalidCredentials()
+		    {
 		        // Retrieve expected error message from Excel
-		        String expectedErrorMessage = ExcelUtility.getStringData(0, 2, "LoginTest");
+		        String expectedErrorMessage = ExcelUtility.getStringData(0, 2,Constants.LOGINPAGE);
 
 		        // Perform login actions with invalid credentials
 		        LoginPage login = new LoginPage(driver);
+		        String username = ExcelUtility.getStringData(1, 0, Constants.LOGINPAGE);
+		        String password = ExcelUtility.getIntegerData(0, 1, Constants.LOGINPAGE); 
 		        login.enterUserName(username);
 		        login.enterPassword(password);
 		        login.clickOnLoginButton();
+		        String actualErrorMessage =login.getActualErrorMessageText();
 
-		        // Find the error message element
-		        WebElement actualError = driver.findElement(By.xpath("//strong[text()='These credentials do not match our records.']"));
-		        String actualErrorMessage = actualError.getText();
-
-		        // Assert the expected vs actual error message
-		        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Invalid login credentials");
+		       // Assert the expected vs actual error message
+		        Assert.assertEquals(actualErrorMessage, expectedErrorMessage,Messages.INVALIDCREDS);
 		    }
 		}
 
