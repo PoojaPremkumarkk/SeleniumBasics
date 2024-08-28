@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.openqa.selenium.support.FindBy;
+
+import utilities.DateUtility;
 import utilities.WaitUtility;  // Import  WaitUtility class
 
 public class HomePage {
@@ -28,6 +30,18 @@ public class HomePage {
 
     @FindBy(xpath = "//a[text()='Sign Out']")
     WebElement signout;
+    @FindBy(xpath="//div[@class='m-8 pull-left mt-15 hidden-xs']/strong")
+    WebElement logindatefield;
+    
+    public String getLoginDate()
+    {
+    	String logindate=logindatefield.getText();
+    	return logindate;
+    }
+    public String getCurrentDate()
+    {
+    	return DateUtility.getUserLoginDate("dd-MM-YYYY");
+    }
 
     // Method to get the already logged user name text
     public String getLoginText() {

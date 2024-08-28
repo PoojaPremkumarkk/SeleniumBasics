@@ -2,31 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-27T21:36:10 IST" name="Default suite" finished-at="2024-08-27T21:36:36 IST" duration-ms="26331">
+  <suite started-at="2024-08-28T20:00:02 IST" name="Default suite" finished-at="2024-08-28T20:00:23 IST" duration-ms="21054">
     <groups>
     </groups>
-    <test started-at="2024-08-27T21:36:10 IST" name="Default test" finished-at="2024-08-27T21:36:36 IST" duration-ms="26331">
-      <class name="testscripts.UsersDeletionAndViewUsers">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.UsersDeletionAndViewUsers@313ac989]" started-at="2024-08-27T21:36:10 IST" name="setBrowser" finished-at="2024-08-27T21:36:21 IST" duration-ms="11208" status="PASS">
+    <test started-at="2024-08-28T20:00:02 IST" name="Default test" finished-at="2024-08-28T20:00:23 IST" duration-ms="21054">
+      <class name="testscripts.HomePageTest">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.HomePageTest@3023df74]" started-at="2024-08-28T20:00:02 IST" name="setBrowser" finished-at="2024-08-28T20:00:17 IST" duration-ms="15656" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="viewUserProfile()[pri:0, instance:testscripts.UsersDeletionAndViewUsers@313ac989]" started-at="2024-08-27T21:36:21 IST" name="viewUserProfile" finished-at="2024-08-27T21:36:36 IST" duration-ms="15071" status="PASS">
+        <test-method signature="userLoginDate()[pri:0, instance:testscripts.HomePageTest@3023df74]" started-at="2024-08-28T20:00:17 IST" name="userLoginDate" finished-at="2024-08-28T20:00:23 IST" duration-ms="5345" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- viewUserProfile -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.UsersDeletionAndViewUsers@313ac989]" started-at="2024-08-27T21:36:36 IST" name="closeBrowser" finished-at="2024-08-27T21:36:36 IST" duration-ms="7" status="PASS">
+        </test-method> <!-- userLoginDate -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.HomePageTest@3023df74]" started-at="2024-08-28T20:00:23 IST" name="closeBrowser" finished-at="2024-08-28T20:00:23 IST" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=viewUserProfile status=SUCCESS method=UsersDeletionAndViewUsers.viewUserProfile()[pri:0, instance:testscripts.UsersDeletionAndViewUsers@313ac989] output={null}]]]>
+                <![CDATA[[TestResult name=userLoginDate status=SUCCESS method=HomePageTest.userLoginDate()[pri:0, instance:testscripts.HomePageTest@3023df74] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- testscripts.UsersDeletionAndViewUsers -->
+      </class> <!-- testscripts.HomePageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

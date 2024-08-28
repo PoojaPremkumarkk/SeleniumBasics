@@ -14,7 +14,7 @@ import pageObjects.UserProfilePage;
 import utilities.ExcelUtility;
 import utilities.RandomDataUtility;
 
-public class UsersDeletionAndViewUsers extends Base {
+public class UserProfilePageTest extends Base {
 	
 	@Test
 

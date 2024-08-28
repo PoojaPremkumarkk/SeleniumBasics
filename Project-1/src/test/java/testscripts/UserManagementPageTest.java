@@ -9,12 +9,11 @@ import constants.Messages;
 import pageObjects.CreateUsersPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
-import pageObjects.UserManagementPage;
 import pageObjects.UserProfilePage;
 import utilities.ExcelUtility;
 import utilities.RandomDataUtility;
 
-public class UserProfileTest extends Base{
+public class UserManagementPageTest extends Base{
 	
 @Test
 
