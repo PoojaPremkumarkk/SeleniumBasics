@@ -2,31 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-28T20:00:02 IST" name="Default suite" finished-at="2024-08-28T20:00:23 IST" duration-ms="21054">
+  <suite started-at="2024-08-29T19:36:07 IST" name="Default suite" finished-at="2024-08-29T19:36:31 IST" duration-ms="24206">
     <groups>
     </groups>
-    <test started-at="2024-08-28T20:00:02 IST" name="Default test" finished-at="2024-08-28T20:00:23 IST" duration-ms="21054">
-      <class name="testscripts.HomePageTest">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.HomePageTest@3023df74]" started-at="2024-08-28T20:00:02 IST" name="setBrowser" finished-at="2024-08-28T20:00:17 IST" duration-ms="15656" status="PASS">
+    <test started-at="2024-08-29T19:36:07 IST" name="Default test" finished-at="2024-08-29T19:36:31 IST" duration-ms="24206">
+      <class name="testscripts.CreateUsersPageTest">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.CreateUsersPageTest@313ac989]" started-at="2024-08-29T19:36:07 IST" name="setBrowser" finished-at="2024-08-29T19:36:20 IST" duration-ms="12652" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="userLoginDate()[pri:0, instance:testscripts.HomePageTest@3023df74]" started-at="2024-08-28T20:00:17 IST" name="userLoginDate" finished-at="2024-08-28T20:00:23 IST" duration-ms="5345" status="PASS">
+        <test-method signature="verifyAddUser1()[pri:0, instance:testscripts.CreateUsersPageTest@313ac989]" started-at="2024-08-29T19:36:20 IST" name="verifyAddUser1" finished-at="2024-08-29T19:36:31 IST" duration-ms="11453" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- userLoginDate -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.HomePageTest@3023df74]" started-at="2024-08-28T20:00:23 IST" name="closeBrowser" finished-at="2024-08-28T20:00:23 IST" duration-ms="6" status="PASS">
+        </test-method> <!-- verifyAddUser1 -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.CreateUsersPageTest@313ac989]" started-at="2024-08-29T19:36:31 IST" name="closeBrowser" finished-at="2024-08-29T19:36:31 IST" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=userLoginDate status=SUCCESS method=HomePageTest.userLoginDate()[pri:0, instance:testscripts.HomePageTest@3023df74] output={null}]]]>
+                <![CDATA[[TestResult name=verifyAddUser1 status=SUCCESS method=CreateUsersPageTest.verifyAddUser1()[pri:0, instance:testscripts.CreateUsersPageTest@313ac989] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- testscripts.HomePageTest -->
+      </class> <!-- testscripts.CreateUsersPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
