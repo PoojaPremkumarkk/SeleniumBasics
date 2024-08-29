@@ -3,6 +3,12 @@
   <groupId>com.obsqura</groupId>
   <artifactId>Seleniumbasics</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 <dependencies>
 	
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -60,7 +66,7 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>
-                        <suiteXmlFile>jenkinstestng.xml</suiteXmlFile>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
