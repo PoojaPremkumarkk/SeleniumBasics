@@ -6,9 +6,7 @@
   <parameter name="browser" value="Chrome"></parameter>
     <classes>
       <class name="testScripts.LoginTest"/>
-      <!-- <class name="org.TESTNGCommands.Commands"></class>
-     <class name="testScripts.RegisterPageTest"/>
-      <class name="testScripts.HomePageTest"/> -->
+      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

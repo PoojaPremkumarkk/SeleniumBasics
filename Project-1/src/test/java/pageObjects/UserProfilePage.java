@@ -42,6 +42,15 @@ public class UserProfilePage {
     @FindBy(xpath="//h3[@class='profile-username']")
     WebElement profileUserName;
     
+    @FindBy(xpath="//a[@class='btn btn-xs btn-primary']//i[@class='glyphicon glyphicon-edit']")
+    WebElement editCreatedUser;
+    
+    public void editCreatedUser()
+    {
+    	wait.until(ExpectedConditions.elementToBeClickable(editCreatedUser)).click();
+    	
+    }
+    
     public String getProfileName()
     {
     	return profileUserName.getText();

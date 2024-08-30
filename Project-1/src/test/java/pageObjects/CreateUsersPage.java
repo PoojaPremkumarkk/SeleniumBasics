@@ -39,8 +39,10 @@ public class CreateUsersPage {
 
     @FindBy(xpath = "//input[@id='confirm_password']")
     private WebElement confirmpassword;
+    
      @FindBy(xpath="//input[@id='username']")
      WebElement username;
+     
     @FindBy(xpath="//input[@id='cmmsn_percent']")
     WebElement  commission;
     

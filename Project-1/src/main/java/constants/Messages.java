@@ -12,6 +12,7 @@ public static final String  RESETINLINEERRORMSG="We have e-mailed your password 
 public static final String   LASTNAMEERRMSG="The last name was not updated successfully";
 public static final String   USERDELETEMSG="The user should have been deleted but is still present.";
 public static final String    DATEMISMATCH="DateMismatch";
+public static final String    LOGINNOTSHOW="Login page is not displayed after logout.";
 
 
 

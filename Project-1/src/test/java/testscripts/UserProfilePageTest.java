@@ -44,4 +44,28 @@ public void verifyEditProfile() {
     // Assertion: Verify that the last name has been updated
     Assert.assertEquals(updatedLastName, newLastName,Messages.LASTNAMEERRMSG);
 }
+@Test
+
+
+public void profileUserLogout() {
+    // Retrieve login credentials and profile information
+    String username = ExcelUtility.getStringData(0, 0, Constants.EDIT);
+    String password = ExcelUtility.getStringData(0, 1, Constants.EDIT);
+    
+    // Initialize LoginPage and perform login
+    LoginPage login = new LoginPage(driver);
+    login.enterUserName(username);
+    login.enterPassword(password);
+    HomePage home = login.clickOnLoginButton();
+    
+    // Navigate to the Home Page and User Profile Page
+    home.clickHomeMenu();
+    
+    // Perform logout
+    home.clickLogout();
+    
+    // Assert successful logout by verifying presence of the login page element
+    Assert.assertTrue(login.isLoginPageDisplayed(),Messages.LOGINNOTSHOW);
+}
+
 }
