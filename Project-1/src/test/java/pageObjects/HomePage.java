@@ -33,6 +33,8 @@ public class HomePage {
     @FindBy(xpath="//div[@class='m-8 pull-left mt-15 hidden-xs']/strong")
     WebElement logindatefield;
     
+    
+    
     public String getLoginDate()
     {
     	String logindate=logindatefield.getText();

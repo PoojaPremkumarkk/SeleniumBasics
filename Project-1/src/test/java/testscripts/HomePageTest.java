@@ -12,13 +12,11 @@ import utilities.ExcelUtility;
 
 public class HomePageTest extends Base{
 	@Test
-	
 	public void userLoginDate()
 	{
 		LoginPage login = new LoginPage(driver);
         String username = ExcelUtility.getStringData(3, 0,Constants.USERPAGE);
         String password = ExcelUtility.getIntegerData(1, 2,Constants.USERPAGE); 
-
         login.enterUserName(username);
         login.enterPassword(password);
         HomePage home = login.clickOnLoginButton();
@@ -27,9 +25,7 @@ public class HomePageTest extends Base{
         String homepagedate=home.getLoginDate();
         String currentdate=home.getCurrentDate();
         Assert.assertEquals(homepagedate,currentdate,Messages.DATEMISMATCH);
-	}
-	
-}
+	}}
 
 
         

@@ -16,8 +16,6 @@ import utilities.ExcelUtility;
 
 public class ResetTest  extends Base {
 	@Test
-	
-	
 	public void errormessagewithInvalidEmailid()
 	{
 		
@@ -28,12 +26,9 @@ public class ResetTest  extends Base {
 		reset.enterEmail(emailId);
 		reset.clickSubmit();
 		String actualerrormsg=reset.getErrorMessage();
-		
-		Assert.assertEquals(actualerrormsg,errormessage,Messages.INVALIDCREDS );
-		
-}
+		Assert.assertEquals(actualerrormsg,errormessage,Messages.INVALIDCREDS );	
+     }
 	@Test
-	
 	public void passwordResetwithValidEmailid()
 	{
 		
@@ -44,8 +39,6 @@ public class ResetTest  extends Base {
 		reset.clickSubmit();
 		String expectedSuccessMessage = ExcelUtility.getStringData(0, 2,Constants.RESETPAGE);
 		String actualSuccessMessage=reset.getSuccessMessage();
-		
-		assertEquals(Messages.RESETINLINEERRORMSG, expectedSuccessMessage, actualSuccessMessage);
-		
-	}
-}
+		assertEquals(Messages.RESETINLINEERRORMSG, expectedSuccessMessage, actualSuccessMessage);	
+	  }}
+

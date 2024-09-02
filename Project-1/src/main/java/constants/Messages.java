@@ -13,13 +13,6 @@ public static final String   LASTNAMEERRMSG="The last name was not updated succe
 public static final String   USERDELETEMSG="The user should have been deleted but is still present.";
 public static final String    DATEMISMATCH="DateMismatch";
 public static final String    LOGINNOTSHOW="Login page is not displayed after logout.";
-
-
-
-
-
-
-
+public static final String   SUCCESSNOTMATCH="Success message does not match!";
 
 }
-
