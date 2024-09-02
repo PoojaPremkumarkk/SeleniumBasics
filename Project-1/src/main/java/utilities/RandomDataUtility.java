@@ -2,8 +2,6 @@ package utilities;
 
 import com.github.javafaker.Faker;
 
-
-
 	public final class RandomDataUtility {
 
 	    private static final Faker faker = new Faker();
