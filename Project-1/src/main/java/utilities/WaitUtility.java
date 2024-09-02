@@ -28,4 +28,12 @@ public class WaitUtility {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITLY_WAIT));
         wait.until(condition);
     }
+    public static void waitForAlertToBePresent(WebDriver driver) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITLY_WAIT));
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+    public static void waitForElementToBeSelected(WebDriver driver, WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITLY_WAIT));
+        wait.until(ExpectedConditions.elementToBeSelected(element));
+    }
 }

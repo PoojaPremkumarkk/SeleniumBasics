@@ -98,10 +98,8 @@ public class UserPageTest extends Base {
         UserProfilePage profile=new UserProfilePage(driver);
         profile.clickOnViewButton();
         String actualname=profile.getProfileName();
-        Assert.assertNotEquals(actualname,username,Messages.USERADDFAILED);
-        
+        Assert.assertNotEquals(actualname,username,Messages.USERADDFAILED);  
 	}
-		
 	@Test
        public void editCreatedUser()
        {
@@ -145,5 +143,4 @@ public class UserPageTest extends Base {
         profile.clickUpdateButton();
         String updatedLastName = profile.getLastName();
         Assert.assertEquals(updatedLastName, newLastName,Messages.LASTNAMEERRMSG);
-    
-}}
+    }}
