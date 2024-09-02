@@ -19,10 +19,10 @@
 			<!-- <class name="testScripts.CreateUsersPageTest"/>  -->
 			<class name="testScripts.HomePageTest" />
 			<!--<class name="testScripts.UsersPageTest"/> -->
-			<class name="testScripts.LoginPageTest" />
+			<class name="testScripts.LoginTest" />
 			<!--<class name="testScripts.UserProfilePageTest"/>
       <class name="testScripts.ImportContactsPageTest"/>
-      <class name="testScripts.PasswordResetPageTest"/> -->
+      <class name="testScripts.ResetTest"/> -->
 		</classes>
 	</test> <!--
 	Test -->

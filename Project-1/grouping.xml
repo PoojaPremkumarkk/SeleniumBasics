@@ -4,7 +4,7 @@
 	<test name="LoginResetTest">
 		<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-			<class name="testScripts.LoginPageTest" />
+			<class name="testScripts.UserPageTest" />
 			<class name="testScripts.ResetTest" />
 		</classes>
 	</test>
@@ -22,7 +22,7 @@
 		<parameter name="browser" value="Edge"></parameter>
 		<classes>
 			<class name="testScripts.CreateUsersPageTest" />
-			<class name="testScripts.LoginPageTest" />
+			<class name="testScripts.LoginTest" />
 		</classes>
 	</test>
 </suite> 
