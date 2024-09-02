@@ -6,6 +6,16 @@ public class WebElementUtility {
         boolean status = element.isDisplayed();
         return status;
     }
+ 
+    public static boolean isElementEnabled(WebElement element) {
+        boolean status = element.isEnabled();
+        return status;
+    }
 
+   
+    public static boolean isElementSelected(WebElement element) {
+        boolean status = element.isSelected();
+        return status;
+    }
   
 }

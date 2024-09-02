@@ -10,5 +10,8 @@ public class DateUtility {
 		Date currentdate=new Date();
 		return dateformat.format(currentdate);
 	}
-
+	public static String formatDate(Date date, String format) {
+        DateFormat dateFormat = new SimpleDateFormat(format);
+        return dateFormat.format(date);
+    }
 }
