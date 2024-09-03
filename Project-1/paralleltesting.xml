@@ -9,7 +9,7 @@
             <class name="testscripts.CreateUsersPageTest">
                 <methods>
                     <include name="verifyAddUser"></include>
-                    <exclude name="verifyCommunityPollSelection"></exclude>
+                    <exclude name="verifyLoginWithNewlyAddUser"></exclude>
                 </methods>
             </class>
         </classes>

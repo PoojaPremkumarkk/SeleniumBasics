@@ -2,6 +2,7 @@ package utilities;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
@@ -40,6 +41,10 @@ public class PageUtility {
     }
     public static void switchToFrameByIndex(WebDriver driver, int index) {
         driver.switchTo().frame(index);
+    }
+    public static void scrollToElement(WebDriver driver, WebElement element) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("arguments[2].scrollIntoView(true);", element);
     }
    
 }

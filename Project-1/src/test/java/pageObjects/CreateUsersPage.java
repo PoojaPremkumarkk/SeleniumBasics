@@ -45,9 +45,7 @@ public class CreateUsersPage {
      
     @FindBy(xpath="//input[@id='cmmsn_percent']")
     WebElement  commission;
-    
-    
-
+  
     @FindBy(xpath = "//button[@id='submit_user_button']")
     private WebElement submit;
    
