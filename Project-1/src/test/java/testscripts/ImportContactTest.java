@@ -12,7 +12,7 @@ import pageObjects.LoginPage;
 import utilities.ExcelUtility;
 
 public class ImportContactTest extends Base{
-	@Test
+	@Test(groups= {"Smoke","Sanity"})
 	public void verifyImportContact()
 	{
 		  String emailId = ExcelUtility.getStringData(0, 0, Constants.LOGINPAGE);

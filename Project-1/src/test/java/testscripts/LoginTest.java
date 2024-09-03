@@ -11,7 +11,7 @@ import pageObjects.LoginPage;
 import utilities.ExcelUtility;
 
   public class LoginTest extends Base {
-	@Test
+	@Test(groups="Smoke")
 	 public void userLoginWithValidCredentials() {      
 		  String emailId = ExcelUtility.getStringData(0, 0, Constants.LOGINPAGE);
 		  String password = ExcelUtility.getIntegerData(0, 1, Constants.LOGINPAGE); 

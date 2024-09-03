@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<groups>
-		<run>
-			<include name="Sanity"></include>
-			<include name="Smoke"></include>
-		</run>
-	</groups>
-	<listeners>
-		<!-- <listener
-		class-name="listeners.AnnotationTransformer"></listener>-->
+<listeners>
+		<listener class-name="listeners.AnnotationTransformer"></listener>
 		<listener class-name="listeners.ExtendListeners"></listener>
 	</listeners>
-
-	<test thread-count="5" name="Test">
-		<parameter name="browser" value="Chrome"></parameter>
-		<classes>
-			<!-- <class name="testScripts.CreateUsersPageTest"/>  -->
-			<class name="testScripts.HomePageTest" />
-			<!--<class name="testScripts.UsersPageTest"/> -->
-			<class name="testScripts.LoginTest" />
-			<!--<class name="testScripts.UserProfilePageTest"/>
-      <class name="testScripts.ResetPageTest"/> -->
-		</classes>
-	</test> <!--
-	Test -->
-</suite> <!--
-Suite -->
+    <test thread-count="5" name="ChromeTest">
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <class name="testscripts.CreateUsersPageTest">
+                <methods>
+                    <include name="verifyAddUser"></include>
+                   <exclude name="verifyLoginWithNewlyAddUser"></exclude>
+                </methods>
+            </class>
+            </classes>
+    </test>
+    <test thread-count="5" name="EdgeTest">
+        <parameter name="browser" value="Edge"></parameter>
+        <classes>
+            <class name="testscripts.LoginTest" />
+             
+        </classes>
+    </test>
+    <test thread-count="5" name="FirefoxTest">
+        <parameter name="browser" value="FireFox"></parameter>
+        <classes>
+            <class name="testscripts.UserPageTest" />
+        </classes>
+    </test>
+</suite>

@@ -48,7 +48,6 @@ public class UserProfilePage {
     public void editCreatedUser()
     {
     	wait.until(ExpectedConditions.elementToBeClickable(editCreatedUser)).click();
-    	
     }
     
     public String getProfileName()
@@ -61,10 +60,7 @@ public class UserProfilePage {
     }
 
     public void editLastName(String newLastName) {
-        // Clear the existing last name
-        wait.until(ExpectedConditions.visibilityOf(lastName)).clear();
-
-        // Enter the new last name
+     wait.until(ExpectedConditions.visibilityOf(lastName)).clear();
         lastName.sendKeys(newLastName);
     }
 

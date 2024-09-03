@@ -8,12 +8,12 @@
   <test thread-count="5" name="Test">
   <parameter name="browser" value="Chrome"></parameter>
     <classes>
-   <!--  <class name="testScripts.CreateUsersPageTest"/> -->
-       <class name="testScripts.HomePageTest"/>
-      <class name="testScripts.LoginTest"/>
-      <class name="testScripts.ResetTest"/>
-      <class name="testScripts.UserPageTest"/>
-      <class name="testScripts.UserProfilePageTest"/>
+   <!--  <class name="testscripts.CreateUsersPageTest"/> -->
+       <class name="testscripts.HomePageTest"/>
+      <class name="testscripts.LoginTest"/>
+      <class name="testscripts.ResetTest"/>
+      <class name="testscripts.UserPageTest"/>
+      <class name="testscripts.UserProfilePageTest"/>
      
       
     </classes>

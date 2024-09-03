@@ -14,7 +14,7 @@ import utilities.RandomDataUtility;
 
     public class CreateUsersPageTest extends Base {
 
-	@Test
+	@Test(groups="Smoke")
         public void verifyAddUser() {
         String prefix = RandomDataUtility.getPrefix();
         String firstName = RandomDataUtility.getFirstName();

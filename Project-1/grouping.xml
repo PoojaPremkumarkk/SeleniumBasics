@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests" thread-count="3">
-	<test name="LoginResetTest">
-		<parameter name="browser" value="Chrome"></parameter>
+<suite name="Suite">
+<groups>
+		<run>
+			<include name="Sanity"></include>
+			<include name="Smoke"></include>
+		</run>
+	</groups>
+	<listeners>
+		<listener class-name="listeners.AnnotationTransformer"></listener>
+		<listener class-name="listeners.ExtendListeners"></listener>
+	</listeners>
+	<test thread-count="5" name="testscripts">	
 		<classes>
-			<class name="testScripts.UserPageTest" />
-			<class name="testScripts.ResetTest" />
-		</classes>
-	</test>
-
-	<test name="HomeUserAndProfileTest">
-		<parameter name="browser" value="Firefox"></parameter>
-		<classes>
-			<class name="testScripts.HomePageTest" />
-			<class name="testScripts.UsersPageTest" />
-			<class name="testScripts.UserProfilePageTest" />
-		</classes>
-	</test>
-
-	<test name="CreateImportContactTest">
-		<parameter name="browser" value="Edge"></parameter>
-		<classes>
-			<class name="testScripts.CreateUsersPageTest" />
-			<class name="testScripts.LoginTest" />
+			<class name="testscripts.HomePageTest" />
+			<class name="testscripts.UsersPageTest" />
+			<class name="testscripts.UserProfilePageTest" />
+			<class name="testscripts.CreateUsersPageTest" />
+			<class name="testscripts.LoginTest" />
 		</classes>
 	</test>
 </suite> 
