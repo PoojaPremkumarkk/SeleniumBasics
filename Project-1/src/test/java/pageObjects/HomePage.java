@@ -1,8 +1,13 @@
 package pageObjects;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.openqa.selenium.support.FindBy;
 
@@ -12,10 +17,11 @@ import utilities.WaitUtility;  // Import  WaitUtility class
 public class HomePage {
 
     WebDriver driver;
+    WebDriverWait wait;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
-        // Initialize PageFactory elements
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         PageFactory.initElements(driver, this);
     }
 
@@ -27,14 +33,33 @@ public class HomePage {
 
     @FindBy(xpath = " //a[@class='dropdown-toggle']//span")
     WebElement homeMenuPage;
+    @FindBy(xpath = " //a[@class='dropdown-toggle']//span")
+    WebElement Adminmenu;
 
     @FindBy(xpath = "//a[text()='Sign Out']")
     WebElement signout;
     @FindBy(xpath="//div[@class='m-8 pull-left mt-15 hidden-xs']/strong")
     WebElement logindatefield;
+    @FindBy(xpath="//span[text()='Admin ']")
+    WebElement loggeduser;
+    @FindBy(xpath = "//a[@class='dropdown-toggle']//span")
+	WebElement loggedInUserName;
     
-    
-    
+    public void clickOnAdmin()
+    {
+    	     	    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("toast-success")));
+
+    	    // Wait until the Admin menu is clickable
+    	    WebElement adminElement = wait.until(ExpectedConditions.elementToBeClickable(Adminmenu));
+    	    
+    	    // Click on the Admin menu
+    	    adminElement.click();
+    	 
+    }
+    public String getLoggedInUserName() {
+		String userNameText = loggedInUserName.getText();
+		return userNameText;
+	}
     public String getLoginDate()
     {
     	String logindate=logindatefield.getText();
@@ -60,16 +85,16 @@ public class HomePage {
     }
 
     // Method to click on the home menu
-    public void clickHomeMenu() {
+    public UserManagementPage clickHomeMenu() {
         // Wait for the home menu link to be clickable using WaitUtility
         WaitUtility.waitForElementToBeClickable(driver, homeMenuPage);
         homeMenuPage.click();
+        return new UserManagementPage(driver);
     }
-
-    // Method to verify the login name
     public void verifyLoginName(String expectedLoginName) {
         // Get the actual login name from the web page
         String actualText = getLoginText();
+        loggedInUserName.click();
         
     }
 

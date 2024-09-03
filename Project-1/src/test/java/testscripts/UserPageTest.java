@@ -51,8 +51,7 @@ public class UserPageTest extends Base {
 	    create.selectRole(role);
 	    create.enterCommission(commission);
 	    create.clickSubmit();
-	    us.enterSearchTerm(emailId);
-        UserProfilePage profile=new UserProfilePage(driver);
+	    UserProfilePage profile=us.enterSearchTerm(emailId);
         profile.clickOnDeleteButton();
         profile.clickOnDeleteOKButton();
         boolean isUserDeleted = us.isUserPresent(emailId); 
@@ -78,12 +77,10 @@ public class UserPageTest extends Base {
 	    login.enterPassword(password);
 	    HomePage home = login.clickOnLoginButton();
 	    home.clickEndTour();
-	    home.clickHomeMenu();
-	    UserManagementPage us = new UserManagementPage(driver);
+	    UserManagementPage us = home.clickHomeMenu();
 	    us.verifyUserManagement();
 	    us.verifyUser();
-	    us.clickAddButton();
-	    CreateUsersPage create = new CreateUsersPage(driver);
+	    CreateUsersPage create = us.clickAddButton();
 	    create.enterPrefix(prefix);
 	    create.enterFirstName(firstName);
 	    create.enterLastName(lastName);
@@ -94,8 +91,7 @@ public class UserPageTest extends Base {
 	    create.selectRole(role);
 	    create.enterCommission(commission);
 	    create.clickSubmit();
-	    us.enterSearchTerm(emailId);
-        UserProfilePage profile=new UserProfilePage(driver);
+	    UserProfilePage profile=us.enterSearchTerm(emailId);
         profile.clickOnViewButton();
         String actualname=profile.getProfileName();
         Assert.assertNotEquals(actualname,username,Messages.USERADDFAILED);  
@@ -120,11 +116,10 @@ public class UserPageTest extends Base {
 	    HomePage home = login.clickOnLoginButton();
 	    home.clickEndTour();
 	    home.clickHomeMenu();
-	    UserManagementPage us = new UserManagementPage(driver);
+	    UserManagementPage us = home.clickHomeMenu();
 	    us.verifyUserManagement();
 	    us.verifyUser();
-	    us.clickAddButton();
-	    CreateUsersPage create = new CreateUsersPage(driver);
+	    CreateUsersPage create = us.clickAddButton();
 	    create.enterPrefix(prefix);
 	    create.enterFirstName(firstName);
 	    create.enterLastName(lastName);
@@ -135,8 +130,7 @@ public class UserPageTest extends Base {
 	    create.selectRole(role);
 	    create.enterCommission(commission);
 	    create.clickSubmit();
-	    us.enterSearchTerm(emailId);
-        UserProfilePage profile=new UserProfilePage(driver);
+        UserProfilePage profile=us.enterSearchTerm(emailId);
         profile.editCreatedUser();
         String newLastName = RandomDataUtility.getLastName();
         profile.editLastName(newLastName);

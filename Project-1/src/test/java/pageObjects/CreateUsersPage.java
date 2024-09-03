@@ -1,20 +1,22 @@
 package pageObjects;
 
+import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CreateUsersPage {
-
-    WebDriver driver;
-
-    // Constructor
-    public CreateUsersPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
+	WebDriver driver;
+    WebDriverWait wait;
+	    public CreateUsersPage(WebDriver driver) {
+	    	this.driver = driver;
+	        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        PageFactory.initElements(driver, this);
+	    }
 
     @FindBy(xpath = "//input[@id='surname']")
       WebElement prefix1;
@@ -52,7 +54,7 @@ public class CreateUsersPage {
 
     // Method to enter prefix
     public void enterPrefix(String prefix) {
-        prefix1.sendKeys(prefix);
+        prefix1.sendKeys(prefix); 
     }
 
     // Method to enter first name

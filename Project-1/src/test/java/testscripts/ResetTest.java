@@ -31,7 +31,6 @@ public class ResetTest  extends Base {
 	@Test
 	public void passwordResetwithValidEmailid()
 	{
-		
 		ResetPage reset=new ResetPage(driver);
 		reset.clickResetLink();
 		String emailId= ExcelUtility.getStringData(1, 0,Constants.RESETPAGE);

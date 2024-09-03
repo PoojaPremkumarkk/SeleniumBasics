@@ -14,7 +14,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class UserManagementPage {
-    WebDriver driver;
+    
+	WebDriver driver;
     WebDriverWait wait;
 
     // Constructor to initialize WebDriver and page elements
@@ -50,14 +51,15 @@ public class UserManagementPage {
         wait.until(ExpectedConditions.elementToBeClickable(users)).click();
     }
 
-    public void clickAddButton() {
+    public CreateUsersPage clickAddButton() {
         wait.until(ExpectedConditions.elementToBeClickable(adduser)).click();
-    }
+        return new CreateUsersPage(driver);  }
 
-    public void enterSearchTerm(String userName) {
+    public UserProfilePage enterSearchTerm(String userName) {
         wait.until(ExpectedConditions.visibilityOf(searchButton));
         searchButton.clear();
         searchButton.sendKeys(userName);
+        return new UserProfilePage(driver);
     }
 
     public CreateUsersPage verifyAddUser() {
