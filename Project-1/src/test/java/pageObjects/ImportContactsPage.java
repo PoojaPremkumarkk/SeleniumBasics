@@ -1,25 +1,17 @@
 package pageObjects;
-
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
+import utilities.WaitUtility;
 import constants.Constants;
 
 public class ImportContactsPage {
 	WebDriver driver;
-    WebDriverWait wait;
-	    public ImportContactsPage(WebDriver driver) {
+    public ImportContactsPage(WebDriver driver) {
 	    	this.driver = driver;
-	        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	        PageFactory.initElements(driver, this);
 	    }
-	    
 	    @FindBy(xpath="//span[text()='Contacts']")
 	    WebElement contactsmenu;
 	    @FindBy(xpath="//a[@href='https://qalegend.com/billing/public/contacts/import']")
@@ -32,18 +24,22 @@ public class ImportContactsPage {
 	    WebElement successMessage;
 	    
 	    public void clickOnContactsMenu() {
-	        wait.until(ExpectedConditions.elementToBeClickable(contactsmenu)).click();
+	    	WaitUtility.waitForElementToBeClickable(driver, contactsmenu);
+	        contactsmenu.click();
 	    }
 	    public void clickOnImportContacts() {
-	        wait.until(ExpectedConditions.elementToBeClickable(contact)).click();
+	    	WaitUtility.waitForElementToBeClickable(driver, contact);
+	        contact.click();
 	    }
 	    public void clickOnFileupload()
 	    {
 	     upload.sendKeys(Constants.HOME_DIRECTORY + Constants.IMPORT_CONTACTPATH);
 	    }
 	    public void clickOnSubmitButton() {
-	        wait.until(ExpectedConditions.elementToBeClickable(submit)).click();
+	    	WaitUtility.waitForElementToBeClickable(driver,submit);
+	        submit.click();
 	    }
+	        
 		public String getSuccessMessage() {
 			return successMessage.getText();
 		}}
