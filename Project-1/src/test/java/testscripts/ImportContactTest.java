@@ -13,9 +13,8 @@ import utilities.ExcelUtility;
 
 public class ImportContactTest extends Base{
 	@Test(groups= {"Smoke","Sanity"})
-	public void verifyImportContact()
-	{
-		  String emailId = ExcelUtility.getStringData(0, 0, Constants.LOGINPAGE);
+	public void verifyImportContact(){
+	      String emailId = ExcelUtility.getStringData(0, 0, Constants.LOGINPAGE);
 		  String password = ExcelUtility.getIntegerData(0, 1, Constants.LOGINPAGE); 
 		  String expectedSuccessMessage = ExcelUtility.getStringData(1, 2, Constants.LOGINPAGE);
           LoginPage login = new LoginPage(driver);
@@ -23,11 +22,10 @@ public class ImportContactTest extends Base{
 		  login.enterPassword(password);
 		  HomePage home = login.clickOnLoginButton();
 		  home.clickEndTour();
-		  ImportContactsPage contact=new ImportContactsPage(driver);
-		  contact.clickOnContactsMenu();
+		  ImportContactsPage contact=home.clickContactsMenu();
 		  contact.clickOnImportContacts();
 		  contact.clickOnFileupload();
 		  contact.clickOnSubmitButton();
 		  String actualSuccessMessage = contact.getSuccessMessage();
 	     Assert.assertNotEquals(actualSuccessMessage, expectedSuccessMessage,Messages.SUCCESSNOTMATCH);
-	}}
+	      }}

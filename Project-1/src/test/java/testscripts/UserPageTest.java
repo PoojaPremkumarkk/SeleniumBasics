@@ -35,12 +35,10 @@ public class UserPageTest extends Base {
 	    login.enterPassword(password);
 	    HomePage home = login.clickOnLoginButton();
 	    home.clickEndTour();
-	    home.clickHomeMenu();
-	    UserManagementPage us = new UserManagementPage(driver);
+	    UserManagementPage us = home.clickHomeMenu();
 	    us.verifyUserManagement();
 	    us.verifyUser();
-	    us.clickAddButton();
-	    CreateUsersPage create = new CreateUsersPage(driver);
+	    CreateUsersPage create =us.clickAddButton();
 	    create.enterPrefix(prefix);
 	    create.enterFirstName(firstName);
 	    create.enterLastName(lastName);
