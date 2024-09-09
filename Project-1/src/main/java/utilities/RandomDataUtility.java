@@ -5,9 +5,6 @@ import com.github.javafaker.Faker;
 	public final class RandomDataUtility {
 
 	    private static final Faker faker = new Faker();
-	    private RandomDataUtility() {
-	        throw new UnsupportedOperationException("Random data Utility class");
-	    }
 	    public static String getPrefix() {
 	        return faker.name().prefix();
 	    }

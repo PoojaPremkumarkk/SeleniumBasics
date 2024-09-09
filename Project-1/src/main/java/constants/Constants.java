@@ -14,6 +14,4 @@ public class Constants {
     public static final String ATEMAIL="@";
     public static final String OUTLOOK="gmailcom";
     public static final String EDIT="EditTest";
-    
-   
 }

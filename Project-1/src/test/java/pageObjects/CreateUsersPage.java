@@ -1,5 +1,4 @@
 package pageObjects;
-
 import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -47,32 +46,24 @@ public class CreateUsersPage {
 	@FindBy(xpath = "//button[@id='submit_user_button']")
 	private WebElement submit;
 
-	// Method to enter prefix
 	public void enterPrefix(String prefix) {
 		prefix1.sendKeys(prefix);
 	}
 
-	// Method to enter first name
 	public void enterFirstName(String fn) {
 		firstname.sendKeys(fn);
 	}
 
-	// Method to enter last name
 	public void enterLastName(String ln) {
 		lastname.sendKeys(ln);
 	}
 
-	// Method to enter email
 	public void enterEmail(String email) {
 		this.email.sendKeys(email);
 	}
 
-	// Method to select a role from the dropdown
 	public void selectRole(String roleName) {
-		// Click to open the dropdown
 		roleDropdown.click();
-
-		// Wait for options to be visible and select the desired role
 		for (WebElement option : roleOptions) {
 			if (option.getText().equals(roleName)) {
 				option.click();
@@ -81,27 +72,22 @@ public class CreateUsersPage {
 		}
 	}
 
-	// Method to enter password
 	public void enterPassword(String password) {
 		this.password.sendKeys(password);
 	}
 
-	// Method to enter confirm password
 	public void enterConfirmPassword(String confirmPassword) {
 		this.confirmpassword.sendKeys(confirmPassword);
 	}
 
-	// Method to enter username
 	public void enterProfileName(String pname) {
 		username.sendKeys(pname);
 	}
 
-	// Method to enter Commission
 	public void enterCommission(String comm) {
 		commission.sendKeys(comm);
 	}
 
-	// Method to click the submit button and return a new HomePage object
 	public HomePage clickSubmit() {
 		submit.click();
 		return new HomePage(driver);

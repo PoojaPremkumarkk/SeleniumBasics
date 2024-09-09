@@ -49,10 +49,10 @@ public class HomePage {
 	@FindBy(xpath = "//a[text()='Profile']")
 	WebElement profile;
 
-	public  UserProfilePage  clickOnProfile() {
+	public UserProfilePage clickOnProfile() {
 		WaitUtility.waitForElementToBeClickable(driver, profile);
 		profile.click();
-		return new UserProfilePage (driver);
+		return new UserProfilePage(driver);
 	}
 
 	public ImportContactsPage clickContactsMenu() {
@@ -63,7 +63,7 @@ public class HomePage {
 	public void clickOnAdmin() {
 		WaitUtility.waitForElementToBeClickable(driver, Adminmenu);
 		WaitUtility.waitForCondition(driver,
-				ExpectedConditions.invisibilityOfElementLocated(By.className("toast-success")));
+		ExpectedConditions.invisibilityOfElementLocated(By.className("toast-success")));
 		Adminmenu.click();
 	}
 
