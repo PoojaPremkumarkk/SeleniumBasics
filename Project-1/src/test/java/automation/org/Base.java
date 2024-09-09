@@ -1,6 +1,5 @@
 package automation.org;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,7 +16,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import constants.Constants;
-
 
 public class Base {
 
@@ -50,15 +48,12 @@ public class Base {
 
 		driver.manage().window().maximize();
 		driver.get(property.getProperty("url"));
-		// driver.get("https://qalegend.com/billing/public/home");
 	}
 
 	@BeforeMethod
 
 	public void setBrowser() {
-
 		initializeBrowser("Chrome");
-
 	}
 
 	@AfterMethod
@@ -68,15 +63,13 @@ public class Base {
 			verifyTakeScreenshot(result);
 		}
 
-		// driver.close();
+		driver.close();
 	}
 
 	public void verifyTakeScreenshot(ITestResult result) throws IOException {
 		TakesScreenshot takesscreenshot = (TakesScreenshot) driver;
 		File screenshot = takesscreenshot.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshot, new File("./Screenshots/" + result.getName() + ".png"));// Create a screenshot
-																								// folder and save
-
+		FileUtils.copyFile(screenshot, new File("./Screenshots/" + result.getName() + ".png"));
 	}
 
 }
