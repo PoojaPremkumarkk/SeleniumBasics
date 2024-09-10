@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtility {
@@ -35,5 +36,10 @@ public class WaitUtility {
     public static void waitForElementToBeSelected(WebDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITLY_WAIT));
         wait.until(ExpectedConditions.elementToBeSelected(element));
+    }
+    public static void waitForAnElementFrequentExecution(WebDriver driver , WebElement element)
+    {
+    	FluentWait fluentwait = new FluentWait(driver);
+    	fluentwait.until(ExpectedConditions.elementToBeClickable(element));
     }
 }
