@@ -15,7 +15,7 @@ import utilities.RandomDataUtility;
 
 public class UserProfilePageTest extends Base {
 
-	@Test
+	@Test(groups="Smoke")
 	public void verifyEditProfile() {
 
 		String username = ExcelUtility.getStringData(0, 0, Constants.EDIT);

@@ -16,7 +16,7 @@ import utilities.RandomDataUtility;
 
 public class UserPageTest extends Base {
 	
-	@Test
+	@Test(groups="Smoke")
 	public void verifyDeleteProfile()
 	{
 		String prefix = RandomDataUtility.getPrefix();

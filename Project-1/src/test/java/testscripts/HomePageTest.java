@@ -11,7 +11,7 @@ import pageObjects.LoginPage;
 import utilities.ExcelUtility;
 
 public class HomePageTest extends Base{
-	@Test
+	@Test(groups="Smoke")
 	public void userLoginDate()
 	{
 		LoginPage login = new LoginPage(driver);

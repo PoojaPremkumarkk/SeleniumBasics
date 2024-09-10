@@ -10,7 +10,7 @@ import pageObjects.ResetPage;
 import utilities.ExcelUtility;
 
 public class ResetTest extends Base {
-	@Test
+	@Test(groups="Smoke")
 	public void errormessagewithInvalidEmailid() {
 
 		ResetPage reset = new ResetPage(driver);
