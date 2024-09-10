@@ -14,9 +14,8 @@
 <test thread-count="5" name="testscripts">	
 <classes>
 <class name="testscripts.HomePageTest" />
-<class name="testscripts.UsersPageTest" />
-<class name="testscripts.UserProfilePageTest" />
 <class name="testscripts.CreateUsersPageTest" />
+<class name="testscripts.UserProfilePageTest" />
 <class name="testscripts.LoginTest" />
 </classes>
 </test>

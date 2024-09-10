@@ -1,4 +1,5 @@
 package extendreport;
+
 import java.io.File;
 
 import org.openqa.selenium.Platform;
@@ -24,7 +25,6 @@ public class ExtendManager {
 		return extent;
 	}
 
-	// Create an extent report instance
 	public static ExtentReports createInstance() {
 		platform = getCurrentPlatform();
 		String fileName = getReportFileLocation(platform);
@@ -35,14 +35,11 @@ public class ExtendManager {
 		htmlReporter.config().setDocumentTitle(fileName);
 		htmlReporter.config().setEncoding("utf-8");
 		htmlReporter.config().setReportName(fileName);
-
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
-
 		return extent;
 	}
 
-	// Select the extent report file location based on platform
 	private static String getReportFileLocation(Platform platform) {
 		String reportFileLocation = null;
 		switch (platform) {
@@ -63,7 +60,6 @@ public class ExtendManager {
 		return reportFileLocation;
 	}
 
-	// Create the report path if it does not exist
 	private static void createReportPath(String path) {
 		File testDirectory = new File(path);
 		if (!testDirectory.exists()) {
@@ -77,7 +73,6 @@ public class ExtendManager {
 		}
 	}
 
-	// Get current platform
 	private static Platform getCurrentPlatform() {
 		if (platform == null) {
 			String operSys = System.getProperty("os.name").toLowerCase();
