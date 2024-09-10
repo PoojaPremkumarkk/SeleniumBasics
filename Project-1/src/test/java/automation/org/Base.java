@@ -50,13 +50,13 @@ public class Base {
 		driver.get(property.getProperty("url"));
 	}
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 
 	public void setBrowser() {
 		initializeBrowser("Chrome");
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 
 	public void closeBrowser(ITestResult result) throws IOException {
 		if (result.getStatus() == ITestResult.FAILURE) {

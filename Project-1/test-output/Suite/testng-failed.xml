@@ -5,16 +5,24 @@
     <listener class-name="listeners.AnnotationTransformer"/>
     <listener class-name="listeners.ExtendListeners"/>
   </listeners>
-  <test thread-count="5" name="FirefoxTest(failed)">
-    <parameter name="browser" value="FireFox"/>
+  <test thread-count="5" name="testscripts(failed)">
+    <groups>
+      <run>
+        <include name="Sanity"/>
+        <include name="Smoke"/>
+      </run>
+    </groups>
     <classes>
-      <class name="testscripts.UserPageTest">
+      <class name="testscripts.LoginTest">
         <methods>
-          <include name="setBrowser"/>
-          <include name="viewUserProfile"/>
-          <include name="closeBrowser"/>
+          <include name="userLoginWithValidCredentials"/>
         </methods>
-      </class> <!-- testscripts.UserPageTest -->
+      </class> <!-- testscripts.LoginTest -->
+      <class name="testscripts.CreateUsersPageTest">
+        <methods>
+          <include name="verifyAddUser"/>
+        </methods>
+      </class> <!-- testscripts.CreateUsersPageTest -->
     </classes>
-  </test> <!-- FirefoxTest(failed) -->
+  </test> <!-- testscripts(failed) -->
 </suite> <!-- Failed suite [Suite] -->
