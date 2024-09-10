@@ -9,73 +9,47 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">testscripts</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">6</td><td class="num attn">2</td><td class="num">2,002</td><td>Sanity, Smoke</td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">12</td><td class="num">0</td><td class="num attn">2</td><td class="num">0</td><td class="num">235,235</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">testscripts &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testscripts.CreateUsersPageTest</td><td><a href="#m0">verifyAddUser</a></td><td rowspan="1">1725975302855</td><td rowspan="1">172</td></tr><tr class="failedodd"><td rowspan="1">testscripts.LoginTest</td><td><a href="#m1">userLoginWithValidCredentials</a></td><td rowspan="1">1725975303373</td><td rowspan="1">82</td></tr><tr><th colspan="4">testscripts &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="3">testscripts.CreateUsersPageTest</td><td><a href="#m2">verifyAddUser</a></td><td rowspan="3">1725975302570</td><td rowspan="3">117</td></tr><tr class="retriedeven"><td><a href="#m3">verifyAddUser</a></td></tr><tr class="retriedeven"><td><a href="#m4">verifyAddUser</a></td></tr><tr class="retriedodd"><td rowspan="3">testscripts.LoginTest</td><td><a href="#m5">userLoginWithValidCredentials</a></td><td rowspan="3">1725975303059</td><td rowspan="3">97</td></tr><tr class="retriedodd"><td><a href="#m6">userLoginWithValidCredentials</a></td></tr><tr class="retriedodd"><td><a href="#m7">userLoginWithValidCredentials</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="2">testscripts.HomePageTest</td><td><a href="#m0">userLoginDate</a></td><td rowspan="2">1725977540082</td><td rowspan="2">14874</td></tr><tr class="retriedeven"><td><a href="#m1">userLoginDate</a></td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">testscripts.HomePageTest</td><td><a href="#m2">userLoginDate</a></td><td rowspan="1">1725977588092</td><td rowspan="1">3927</td></tr><tr class="passedodd"><td rowspan="4">testscripts.LoginTest</td><td><a href="#m3">errorMessageWithInvalidCredentials</a></td><td rowspan="3">1725977601638</td><td rowspan="3">1301</td></tr><tr class="passedodd"><td><a href="#m4">errorMessageWithInvalidCredentials</a></td></tr><tr class="passedodd"><td><a href="#m5">errorMessageWithInvalidCredentials</a></td></tr><tr class="passedodd"><td><a href="#m6">userLoginWithValidCredentials</a></td><td rowspan="1">1725977637808</td><td rowspan="1">4826</td></tr><tr class="passedeven"><td rowspan="2">testscripts.ResetTest</td><td><a href="#m7">errormessagewithInvalidEmailid</a></td><td rowspan="1">1725977650689</td><td rowspan="1">1709</td></tr><tr class="passedeven"><td><a href="#m8">passwordResetwithValidEmailid</a></td><td rowspan="1">1725977659838</td><td rowspan="1">2432</td></tr><tr class="passedodd"><td rowspan="3">testscripts.UserPageTest</td><td><a href="#m9">editCreatedUser</a></td><td rowspan="1">1725977672174</td><td rowspan="1">12769</td></tr><tr class="passedodd"><td><a href="#m10">verifyDeleteProfile</a></td><td rowspan="1">1725977695725</td><td rowspan="1">13590</td></tr><tr class="passedodd"><td><a href="#m11">viewUserProfile</a></td><td rowspan="1">1725977718817</td><td rowspan="1">14893</td></tr><tr class="passedeven"><td rowspan="2">testscripts.UserProfilePageTest</td><td><a href="#m12">profileUserLogout</a></td><td rowspan="1">1725977742571</td><td rowspan="1">4558</td></tr><tr class="passedeven"><td><a href="#m13">verifyEditProfile</a></td><td rowspan="1">1725977756267</td><td rowspan="1">4590</td></tr></tbody>
 </table>
-<h2>testscripts</h2><h3 id="m0">testscripts.CreateUsersPageTest#verifyAddUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-	at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-	at testscripts.CreateUsersPageTest.verifyAddUser(CreateUsersPageTest.java:31)
+<h2>Test</h2><h3 id="m0">testscripts.HomePageTest#userLoginDate</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (022071b527f5a52e16bb394f82886e52)] -&gt; xpath: //button[@data-role=&apos;end&apos;]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.120, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\pooja\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57150}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57150/devtoo..., se:cdpVersion: 128.0.6613.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 022071b527f5a52e16bb394f82886e52
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at utilities.WaitUtility.waitForElementToBeClickable(WaitUtility.java:21)
+	at pageObjects.HomePage.clickEndTour(HomePage.java:90)
+	at testscripts.HomePageTest.userLoginDate(HomePageTest.java:23)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">testscripts.LoginTest#userLoginWithValidCredentials</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-	at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-	at testscripts.LoginTest.userLoginWithValidCredentials(LoginTest.java:20)
+<h3 id="m1">testscripts.HomePageTest#userLoginDate</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (ecaa1da8a2ff3b90b3ed86a0346cfd61)] -&gt; xpath: //button[@data-role=&apos;end&apos;]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.120, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\pooja\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57201}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57201/devtoo..., se:cdpVersion: 128.0.6613.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ecaa1da8a2ff3b90b3ed86a0346cfd61
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at utilities.WaitUtility.waitForElementToBeClickable(WaitUtility.java:21)
+	at pageObjects.HomePage.clickEndTour(HomePage.java:90)
+	at testscripts.HomePageTest.userLoginDate(HomePageTest.java:23)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">testscripts.CreateUsersPageTest#verifyAddUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-	at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-	at testscripts.CreateUsersPageTest.verifyAddUser(CreateUsersPageTest.java:31)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">testscripts.CreateUsersPageTest#verifyAddUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-	at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-	at testscripts.CreateUsersPageTest.verifyAddUser(CreateUsersPageTest.java:31)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">testscripts.CreateUsersPageTest#verifyAddUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-	at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-	at testscripts.CreateUsersPageTest.verifyAddUser(CreateUsersPageTest.java:31)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">testscripts.LoginTest#userLoginWithValidCredentials</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-	at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-	at testscripts.LoginTest.userLoginWithValidCredentials(LoginTest.java:20)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">testscripts.LoginTest#userLoginWithValidCredentials</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-	at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-	at testscripts.LoginTest.userLoginWithValidCredentials(LoginTest.java:20)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">testscripts.LoginTest#userLoginWithValidCredentials</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-	at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-	at testscripts.LoginTest.userLoginWithValidCredentials(LoginTest.java:20)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">testscripts.HomePageTest#userLoginDate</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">testscripts.LoginTest#errorMessageWithInvalidCredentials</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>admin</td><td>12345678678</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">testscripts.LoginTest#errorMessageWithInvalidCredentials</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>admin1</td><td>123456</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">testscripts.LoginTest#errorMessageWithInvalidCredentials</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>admin12</td><td>34645575</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">testscripts.LoginTest#userLoginWithValidCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">testscripts.ResetTest#errormessagewithInvalidEmailid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">testscripts.ResetTest#passwordResetwithValidEmailid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">testscripts.UserPageTest#editCreatedUser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">testscripts.UserPageTest#verifyDeleteProfile</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">testscripts.UserPageTest#viewUserProfile</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">testscripts.UserProfilePageTest#profileUserLogout</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">testscripts.UserProfilePageTest#verifyEditProfile</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

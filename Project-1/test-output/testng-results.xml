@@ -1,206 +1,235 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results retried="6" ignored="6" total="14" passed="0" failed="2" skipped="0">
+<testng-results retried="2" ignored="2" total="16" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-10T19:05:01 IST" name="Suite" finished-at="2024-09-10T19:05:03 IST" duration-ms="2002">
+  <suite started-at="2024-09-10T19:42:05 IST" name="Suite" finished-at="2024-09-10T19:46:00 IST" duration-ms="235235">
     <groups>
       <group name="Smoke">
-        <method signature="CreateUsersPageTest.verifyAddUser()[pri:0, instance:testscripts.CreateUsersPageTest@6392827e]" name="verifyAddUser" class="testscripts.CreateUsersPageTest"/>
-        <method signature="LoginTest.userLoginWithValidCredentials()[pri:0, instance:testscripts.LoginTest@d5b810e]" name="userLoginWithValidCredentials" class="testscripts.LoginTest"/>
+        <method signature="LoginTest.userLoginWithValidCredentials()[pri:0, instance:testscripts.LoginTest@6e0f5f7f]" name="userLoginWithValidCredentials" class="testscripts.LoginTest"/>
       </group> <!-- Smoke -->
     </groups>
-    <test started-at="2024-09-10T19:05:01 IST" name="testscripts" finished-at="2024-09-10T19:05:03 IST" duration-ms="2002">
+    <test started-at="2024-09-10T19:42:05 IST" name="Test" finished-at="2024-09-10T19:46:00 IST" duration-ms="235235">
+      <class name="testscripts.UserProfilePageTest">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.UserProfilePageTest@2ea41516]" started-at="2024-09-10T19:45:33 IST" name="setBrowser" finished-at="2024-09-10T19:45:42 IST" duration-ms="8717" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="profileUserLogout()[pri:0, instance:testscripts.UserProfilePageTest@2ea41516]" started-at="2024-09-10T19:45:42 IST" name="profileUserLogout" finished-at="2024-09-10T19:45:47 IST" duration-ms="4558" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- profileUserLogout -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.UserProfilePageTest@2ea41516]" started-at="2024-09-10T19:45:47 IST" name="closeBrowser" finished-at="2024-09-10T19:45:47 IST" duration-ms="121" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=profileUserLogout status=SUCCESS method=UserProfilePageTest.profileUserLogout()[pri:0, instance:testscripts.UserProfilePageTest@2ea41516] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.UserProfilePageTest@2ea41516]" started-at="2024-09-10T19:45:47 IST" name="setBrowser" finished-at="2024-09-10T19:45:56 IST" duration-ms="9014" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="verifyEditProfile()[pri:0, instance:testscripts.UserProfilePageTest@2ea41516]" started-at="2024-09-10T19:45:56 IST" name="verifyEditProfile" finished-at="2024-09-10T19:46:00 IST" duration-ms="4590" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEditProfile -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.UserProfilePageTest@2ea41516]" started-at="2024-09-10T19:46:00 IST" name="closeBrowser" finished-at="2024-09-10T19:46:00 IST" duration-ms="98" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyEditProfile status=SUCCESS method=UserProfilePageTest.verifyEditProfile()[pri:0, instance:testscripts.UserProfilePageTest@2ea41516] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testscripts.UserProfilePageTest -->
       <class name="testscripts.LoginTest">
-        <test-method retried="true" signature="userLoginWithValidCredentials()[pri:0, instance:testscripts.LoginTest@d5b810e]" started-at="2024-09-10T19:05:03 IST" name="userLoginWithValidCredentials" finished-at="2024-09-10T19:05:03 IST" duration-ms="97" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-at testscripts.LoginTest.userLoginWithValidCredentials(LoginTest.java:20)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.LoginTest@6e0f5f7f]" started-at="2024-09-10T19:43:12 IST" name="setBrowser" finished-at="2024-09-10T19:43:21 IST" duration-ms="9274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="errorMessageWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testscripts.LoginTest@6e0f5f7f]" started-at="2024-09-10T19:43:21 IST" name="errorMessageWithInvalidCredentials" data-provider="invalidUserCredentials" finished-at="2024-09-10T19:43:22 IST" duration-ms="1301" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12345678678]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- errorMessageWithInvalidCredentials -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.LoginTest@6e0f5f7f]" started-at="2024-09-10T19:43:22 IST" name="closeBrowser" finished-at="2024-09-10T19:43:23 IST" duration-ms="202" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=errorMessageWithInvalidCredentials status=SUCCESS method=LoginTest.errorMessageWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testscripts.LoginTest@6e0f5f7f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.LoginTest@6e0f5f7f]" started-at="2024-09-10T19:43:23 IST" name="setBrowser" finished-at="2024-09-10T19:43:32 IST" duration-ms="8977" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="errorMessageWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testscripts.LoginTest@6e0f5f7f]" started-at="2024-09-10T19:43:32 IST" name="errorMessageWithInvalidCredentials" data-provider="invalidUserCredentials" finished-at="2024-09-10T19:43:33 IST" duration-ms="1090" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- errorMessageWithInvalidCredentials -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.LoginTest@6e0f5f7f]" started-at="2024-09-10T19:43:33 IST" name="closeBrowser" finished-at="2024-09-10T19:43:33 IST" duration-ms="141" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=errorMessageWithInvalidCredentials status=SUCCESS method=LoginTest.errorMessageWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testscripts.LoginTest@6e0f5f7f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.LoginTest@6e0f5f7f]" started-at="2024-09-10T19:43:33 IST" name="setBrowser" finished-at="2024-09-10T19:43:42 IST" duration-ms="8964" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="errorMessageWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testscripts.LoginTest@6e0f5f7f]" started-at="2024-09-10T19:43:42 IST" name="errorMessageWithInvalidCredentials" data-provider="invalidUserCredentials" finished-at="2024-09-10T19:43:43 IST" duration-ms="1267" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[34645575]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- errorMessageWithInvalidCredentials -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.LoginTest@6e0f5f7f]" started-at="2024-09-10T19:43:43 IST" name="closeBrowser" finished-at="2024-09-10T19:43:43 IST" duration-ms="158" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=errorMessageWithInvalidCredentials status=SUCCESS method=LoginTest.errorMessageWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testscripts.LoginTest@6e0f5f7f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.LoginTest@6e0f5f7f]" started-at="2024-09-10T19:43:43 IST" name="setBrowser" finished-at="2024-09-10T19:43:57 IST" duration-ms="14041" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="userLoginWithValidCredentials()[pri:0, instance:testscripts.LoginTest@6e0f5f7f]" started-at="2024-09-10T19:43:57 IST" name="userLoginWithValidCredentials" finished-at="2024-09-10T19:44:02 IST" duration-ms="4826" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userLoginWithValidCredentials -->
-        <test-method retried="true" signature="userLoginWithValidCredentials()[pri:0, instance:testscripts.LoginTest@d5b810e]" started-at="2024-09-10T19:05:03 IST" name="userLoginWithValidCredentials" finished-at="2024-09-10T19:05:03 IST" duration-ms="115" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-at testscripts.LoginTest.userLoginWithValidCredentials(LoginTest.java:20)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.LoginTest@6e0f5f7f]" started-at="2024-09-10T19:44:02 IST" name="closeBrowser" finished-at="2024-09-10T19:44:02 IST" duration-ms="126" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=userLoginWithValidCredentials status=SUCCESS method=LoginTest.userLoginWithValidCredentials()[pri:0, instance:testscripts.LoginTest@6e0f5f7f] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- userLoginWithValidCredentials -->
-        <test-method retried="true" signature="userLoginWithValidCredentials()[pri:0, instance:testscripts.LoginTest@d5b810e]" started-at="2024-09-10T19:05:03 IST" name="userLoginWithValidCredentials" finished-at="2024-09-10T19:05:03 IST" duration-ms="93" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-at testscripts.LoginTest.userLoginWithValidCredentials(LoginTest.java:20)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- userLoginWithValidCredentials -->
-        <test-method signature="userLoginWithValidCredentials()[pri:0, instance:testscripts.LoginTest@d5b810e]" started-at="2024-09-10T19:05:03 IST" name="userLoginWithValidCredentials" finished-at="2024-09-10T19:05:03 IST" duration-ms="82" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-at testscripts.LoginTest.userLoginWithValidCredentials(LoginTest.java:20)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- userLoginWithValidCredentials -->
+        </test-method> <!-- closeBrowser -->
       </class> <!-- testscripts.LoginTest -->
-      <class name="testscripts.CreateUsersPageTest">
-        <test-method retried="true" signature="verifyAddUser()[pri:0, instance:testscripts.CreateUsersPageTest@6392827e]" started-at="2024-09-10T19:05:01 IST" name="verifyAddUser" finished-at="2024-09-10T19:05:02 IST" duration-ms="1050" status="SKIP">
-          <exception class="java.lang.NullPointerException">
+      <class name="testscripts.ResetTest">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.ResetTest@2805d709]" started-at="2024-09-10T19:44:02 IST" name="setBrowser" finished-at="2024-09-10T19:44:10 IST" duration-ms="7908" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="errormessagewithInvalidEmailid()[pri:0, instance:testscripts.ResetTest@2805d709]" started-at="2024-09-10T19:44:10 IST" name="errormessagewithInvalidEmailid" finished-at="2024-09-10T19:44:12 IST" duration-ms="1709" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- errormessagewithInvalidEmailid -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.ResetTest@2805d709]" started-at="2024-09-10T19:44:12 IST" name="closeBrowser" finished-at="2024-09-10T19:44:12 IST" duration-ms="142" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=errormessagewithInvalidEmailid status=SUCCESS method=ResetTest.errormessagewithInvalidEmailid()[pri:0, instance:testscripts.ResetTest@2805d709] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.ResetTest@2805d709]" started-at="2024-09-10T19:44:12 IST" name="setBrowser" finished-at="2024-09-10T19:44:19 IST" duration-ms="7294" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="passwordResetwithValidEmailid()[pri:0, instance:testscripts.ResetTest@2805d709]" started-at="2024-09-10T19:44:19 IST" name="passwordResetwithValidEmailid" finished-at="2024-09-10T19:44:22 IST" duration-ms="2432" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordResetwithValidEmailid -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.ResetTest@2805d709]" started-at="2024-09-10T19:44:22 IST" name="closeBrowser" finished-at="2024-09-10T19:44:22 IST" duration-ms="129" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=passwordResetwithValidEmailid status=SUCCESS method=ResetTest.passwordResetwithValidEmailid()[pri:0, instance:testscripts.ResetTest@2805d709] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testscripts.ResetTest -->
+      <class name="testscripts.HomePageTest">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.HomePageTest@614ca7df]" started-at="2024-09-10T19:42:05 IST" name="setBrowser" finished-at="2024-09-10T19:42:20 IST" duration-ms="14219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method retried="true" signature="userLoginDate()[pri:0, instance:testscripts.HomePageTest@614ca7df]" started-at="2024-09-10T19:42:20 IST" name="userLoginDate" finished-at="2024-09-10T19:42:34 IST" duration-ms="14874" status="SKIP">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null]]>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (022071b527f5a52e16bb394f82886e52)] -> xpath: //button[@data-role='end']] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.120, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\pooja\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57150}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57150/devtoo..., se:cdpVersion: 128.0.6613.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 022071b527f5a52e16bb394f82886e52]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-at testscripts.CreateUsersPageTest.verifyAddUser(CreateUsersPageTest.java:31)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (022071b527f5a52e16bb394f82886e52)] -> xpath: //button[@data-role='end']] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.120, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\pooja\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57150}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57150/devtoo..., se:cdpVersion: 128.0.6613.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 022071b527f5a52e16bb394f82886e52
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at utilities.WaitUtility.waitForElementToBeClickable(WaitUtility.java:21)
+at pageObjects.HomePage.clickEndTour(HomePage.java:90)
+at testscripts.HomePageTest.userLoginDate(HomePageTest.java:23)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -229,22 +258,47 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAddUser -->
-        <test-method retried="true" signature="verifyAddUser()[pri:0, instance:testscripts.CreateUsersPageTest@6392827e]" started-at="2024-09-10T19:05:02 IST" name="verifyAddUser" finished-at="2024-09-10T19:05:02 IST" duration-ms="117" status="SKIP">
-          <exception class="java.lang.NullPointerException">
+        </test-method> <!-- userLoginDate -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.HomePageTest@614ca7df]" started-at="2024-09-10T19:42:34 IST" name="closeBrowser" finished-at="2024-09-10T19:42:35 IST" duration-ms="104" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=userLoginDate status=SKIP method=HomePageTest.userLoginDate()[pri:0, instance:testscripts.HomePageTest@614ca7df] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.HomePageTest@614ca7df]" started-at="2024-09-10T19:42:35 IST" name="setBrowser" finished-at="2024-09-10T19:42:44 IST" duration-ms="9902" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method retried="true" signature="userLoginDate()[pri:0, instance:testscripts.HomePageTest@614ca7df]" started-at="2024-09-10T19:42:44 IST" name="userLoginDate" finished-at="2024-09-10T19:42:59 IST" duration-ms="14049" status="SKIP">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null]]>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (ecaa1da8a2ff3b90b3ed86a0346cfd61)] -> xpath: //button[@data-role='end']] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.120, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\pooja\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57201}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57201/devtoo..., se:cdpVersion: 128.0.6613.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ecaa1da8a2ff3b90b3ed86a0346cfd61]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-at testscripts.CreateUsersPageTest.verifyAddUser(CreateUsersPageTest.java:31)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (ecaa1da8a2ff3b90b3ed86a0346cfd61)] -> xpath: //button[@data-role='end']] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.120, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\pooja\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57201}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57201/devtoo..., se:cdpVersion: 128.0.6613.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ecaa1da8a2ff3b90b3ed86a0346cfd61
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at utilities.WaitUtility.waitForElementToBeClickable(WaitUtility.java:21)
+at pageObjects.HomePage.clickEndTour(HomePage.java:90)
+at testscripts.HomePageTest.userLoginDate(HomePageTest.java:23)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -273,99 +327,100 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAddUser -->
-        <test-method retried="true" signature="verifyAddUser()[pri:0, instance:testscripts.CreateUsersPageTest@6392827e]" started-at="2024-09-10T19:05:02 IST" name="verifyAddUser" finished-at="2024-09-10T19:05:02 IST" duration-ms="158" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-at testscripts.CreateUsersPageTest.verifyAddUser(CreateUsersPageTest.java:31)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        </test-method> <!-- userLoginDate -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.HomePageTest@614ca7df]" started-at="2024-09-10T19:42:59 IST" name="closeBrowser" finished-at="2024-09-10T19:42:59 IST" duration-ms="54" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=userLoginDate status=SKIP method=HomePageTest.userLoginDate()[pri:0, instance:testscripts.HomePageTest@614ca7df] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAddUser -->
-        <test-method signature="verifyAddUser()[pri:0, instance:testscripts.CreateUsersPageTest@6392827e]" started-at="2024-09-10T19:05:02 IST" name="verifyAddUser" finished-at="2024-09-10T19:05:03 IST" duration-ms="172" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
-at pageObjects.LoginPage.enterUserName(LoginPage.java:33)
-at testscripts.CreateUsersPageTest.verifyAddUser(CreateUsersPageTest.java:31)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.HomePageTest@614ca7df]" started-at="2024-09-10T19:42:59 IST" name="setBrowser" finished-at="2024-09-10T19:43:08 IST" duration-ms="8986" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAddUser -->
-      </class> <!-- testscripts.CreateUsersPageTest -->
-    </test> <!-- testscripts -->
+        </test-method> <!-- setBrowser -->
+        <test-method signature="userLoginDate()[pri:0, instance:testscripts.HomePageTest@614ca7df]" started-at="2024-09-10T19:43:08 IST" name="userLoginDate" finished-at="2024-09-10T19:43:12 IST" duration-ms="3927" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userLoginDate -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.HomePageTest@614ca7df]" started-at="2024-09-10T19:43:12 IST" name="closeBrowser" finished-at="2024-09-10T19:43:12 IST" duration-ms="272" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=userLoginDate status=SUCCESS method=HomePageTest.userLoginDate()[pri:0, instance:testscripts.HomePageTest@614ca7df] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testscripts.HomePageTest -->
+      <class name="testscripts.UserPageTest">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.UserPageTest@3ee37e5a]" started-at="2024-09-10T19:44:22 IST" name="setBrowser" finished-at="2024-09-10T19:44:32 IST" duration-ms="9770" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="editCreatedUser()[pri:0, instance:testscripts.UserPageTest@3ee37e5a]" started-at="2024-09-10T19:44:32 IST" name="editCreatedUser" finished-at="2024-09-10T19:44:44 IST" duration-ms="12769" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editCreatedUser -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.UserPageTest@3ee37e5a]" started-at="2024-09-10T19:44:44 IST" name="closeBrowser" finished-at="2024-09-10T19:44:45 IST" duration-ms="83" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=editCreatedUser status=SUCCESS method=UserPageTest.editCreatedUser()[pri:0, instance:testscripts.UserPageTest@3ee37e5a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.UserPageTest@3ee37e5a]" started-at="2024-09-10T19:44:45 IST" name="setBrowser" finished-at="2024-09-10T19:44:55 IST" duration-ms="10694" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="verifyDeleteProfile()[pri:0, instance:testscripts.UserPageTest@3ee37e5a]" started-at="2024-09-10T19:44:55 IST" name="verifyDeleteProfile" finished-at="2024-09-10T19:45:09 IST" duration-ms="13590" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDeleteProfile -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.UserPageTest@3ee37e5a]" started-at="2024-09-10T19:45:09 IST" name="closeBrowser" finished-at="2024-09-10T19:45:09 IST" duration-ms="110" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyDeleteProfile status=SUCCESS method=UserPageTest.verifyDeleteProfile()[pri:0, instance:testscripts.UserPageTest@3ee37e5a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testscripts.UserPageTest@3ee37e5a]" started-at="2024-09-10T19:45:09 IST" name="setBrowser" finished-at="2024-09-10T19:45:18 IST" duration-ms="9378" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="viewUserProfile()[pri:0, instance:testscripts.UserPageTest@3ee37e5a]" started-at="2024-09-10T19:45:18 IST" name="viewUserProfile" finished-at="2024-09-10T19:45:33 IST" duration-ms="14893" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- viewUserProfile -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscripts.UserPageTest@3ee37e5a]" started-at="2024-09-10T19:45:33 IST" name="closeBrowser" finished-at="2024-09-10T19:45:33 IST" duration-ms="137" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=viewUserProfile status=SUCCESS method=UserPageTest.viewUserProfile()[pri:0, instance:testscripts.UserPageTest@3ee37e5a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testscripts.UserPageTest -->
+    </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

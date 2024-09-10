@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import constants.Constants;
 import testscripts.ImportContactTest;
 
 import org.openqa.selenium.support.FindBy;
@@ -78,7 +79,7 @@ public class HomePage {
 	}
 
 	public String getCurrentDate() {
-		return DateUtility.getUserLoginDate("dd-MM-YYYY");
+		return DateUtility.getUserLoginDate(Constants.DATE);
 	}
 
 	public String getLoginText() {
